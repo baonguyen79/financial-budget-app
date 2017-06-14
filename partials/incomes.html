@@ -1,0 +1,39 @@
+<h3>Income</h3>
+<div class="row-fluid">
+	<div class="col-sm-3" style="background-color:lavender;">
+		<h4>Income / Expenses</h4>
+		<p>Total income: {{totalIncome}}</p>
+	</div>
+
+	<div class="col-sm-3" style="background-color:lavender;">
+	   <h4>Fix Expenses</h4>
+		<p>Fix Expenses: {{totalFixExpenses}}</p> 
+		<div class="js-gauge js-gauge--1 gauge"></div>
+	 </div>
+
+	<div class="col-sm-3" style="background-color:lavender;">
+	  <h4>Vary Expenses</h4>
+      <p>Vary Expenses set amount: {{totalVaryExpenses.setAmount}}</p> 
+      <p>Vary Expenses spend amount: {{totalVaryExpenses.spendAmount}}</p> 
+      <div class="js-gauge js-gauge--1 gauge"></div>
+	</div>
+
+	<div class="col-sm-3" style="background-color:lavender;">
+	  <h4>Box 4</h4>
+	  <hr/>
+		<p>saving for goal: {{totalSavingFor.goal}}</p> 
+		<p>saving for save amount: {{totalSavingFor.saveAmount}}</p> 
+		<canvas id="linearCanvas-id"></canvas>
+		<div class="js-gauge js-gauge--1 gauge"></div>
+	</div>  
+
+</div>	
+
+<div class="row-fluid">
+<div class="col-sm-4" style="background-color:lavender;"></div>
+<div class="col-sm-4" style="background-color:lavender;"></div>
+		<canvas id="canvas-id"></canvas>
+<div class="col-sm-4" style="background-color:lavender;"></div>
+</div>
+
+

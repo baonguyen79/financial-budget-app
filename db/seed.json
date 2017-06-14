@@ -1,0 +1,95 @@
+{
+  "incomes" : {
+    
+    "income1" : {
+	  "month": "01",	
+      "title" : "paycheck",
+	  "date" : "01/01/2017",
+	  "amount" : 1234,
+      "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+    },
+	
+    "income2" : {
+	  "month": "01",	
+      "title" : "paycheck",
+	  "date" : "01/01/2017",
+	  "amount" : 1234,
+      "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+    
+    }
+  },
+  "fixExpenses" : {
+      "fixExpense1" : {
+	  "month": "01",	
+	  "title" : "comcast",
+	  "amount" : 1234,
+	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+    },
+	 "fixExpense2" : {
+	  "month": "01",	
+	  "title" : "car payment",
+	  "amount" : 1234,
+	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+    }
+  },
+  "varyExpenses" : {
+	 "varyExpense1" : {
+	  "month": "01",	
+	  "title" : "food",
+	  "date" : "01/01/2017",
+	  "setAmount" : 1234,
+	  "spendAmount" : 1234,
+	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+    },
+	 "varyExpense2" : {
+	  "month": "01",	
+	  "title" : "fun",
+	  "date" : "01/01/2017",
+	  "setAmount" : 1234,
+	  "spendAmount" : 1234,
+	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+    }
+  },
+  "savingFor": {
+	"savingFor1" : {
+	  "month": "01",	
+	  "title" : "vacatiion",
+	  "goal" : 1234,
+	  "saveAmount" : 123,
+	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+	},
+	"savingFor2" : {
+	  "month": "01",	
+	  "title" : "emergency",
+	  "goal" : 1234,
+	  "saveAmount" : 123,
+	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+	},
+	"savingFor3" : {
+	  "month": "01",	
+	  "title" : "new car",
+	  "goal" : 1234,
+	  "saveAmount" : 123,
+	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+	}
+  },
+  "saving" : {
+	"amount": 1234,
+	"uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+  },
+  
+  "users" : {
+    "user0" : {
+      "uid" : "pLPQeobtWxV9Y2qiN9T3R6BgsKs1",
+      "username" : "Ally"
+    },
+    "user1" : {
+      "uid" : "pLPQeobtWxV9Y2qiN9T3R6BgsKs1",
+      "username" : "Billy"
+    },
+    "user2" : {
+      "uid" : "pLPQeobtWxV9Y2qiN9T3R6BgsKs1",
+      "username" : "Charlie"
+    }
+  }
+}
