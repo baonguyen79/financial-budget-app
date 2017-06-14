@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-xs-2 col-md-3">
+    <div class="thumbnail">
+    <h4>Vary Expenses</h4>
+     <canvas id="linearCanvas-id1"></canvas>
+      <p>Set amount: {{totalVaryExpenses.setAmount}}</p> 
+      <p>Spend amount: {{totalVaryExpenses.spendAmount}}</p> 
+      <!-- <img src="..." alt="..."> -->
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <div class="thumbnail">
+      <canvas id="linearCanvas-id2"></canvas>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <div class="thumbnail">
+      <!-- <canvas id="linearCanvas-id3"></canvas> -->
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <div class="thumbnail">
+      <!-- <img src="..." alt="..."> -->
+		<!-- <canvas id="linearCanvas-id4"></canvas> -->
+    </div>
+  </div>
+
+</div>
+
+<div class="row-fluid">
+	<div class="col-sm-2">
+	 <div class="panel panel-default">
+		<div class="js-gauge js-gauge--1 gauge"></div>
+    <p>% of total expenses</p>
+    <h4>Fix Expenses </h4> 
+		<p>Amount: {{allFixExpenses}}</p> 
+	</div>
+	</div>
+
+  <div class="col-sm-2">
+   <div class="panel panel-default">
+    <div class="js-gauge js-gauge--2 gauge"></div>
+     <p>% of total expenses</p>
+    <h4>Vary Expenses </h4> 
+    <p>set amount: {{allVaryExpenses.setAmount}} spend amount: {{allVaryExpenses.spendAmount}}</p> 
+  </div>
+  </div>
+
+	<div class="col-sm-4">
+	 <div class="panel panel-default">
+		<canvas id="canvas-id"></canvas>
+		<h3>Total all expenses: {{totalAllExpenses}}   all incomes: {{totalIncome}}</h3>
+	</div>
+	</div>
+
+	<div class="col-sm-2">
+	 <div class="panel panel-default">
+		<div class="js-gauge js-gauge--3 gauge"></div>
+    <h4>Saving</h4> 
+		<p>goal: {{totalSavingFor.goal}}  Saved amount: {{totalSavingFor.saveAmount}} </p> 
+	</div>		
+	</div>
+</div>

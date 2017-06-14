@@ -1,6 +1,7 @@
 app.factory("caculationFactory", function(){
 
 	let sum = 0;
+	let sumFixExpense = 0;
 	let varyExpense = {
 		setAmount: 0,
 		spendAmount: 0
@@ -21,12 +22,12 @@ app.factory("caculationFactory", function(){
     };
 
     let totalFixExpenses = (expense) => {
-    	sum = 0;
+    	sumFixExpense = 0;
 		expense.forEach ((item) => {
-			sum += item.amount;
+			sumFixExpense += item.amount;
 		});
 
-		return sum;
+		return sumFixExpense;
     };
    
 
@@ -37,6 +38,7 @@ app.factory("caculationFactory", function(){
 			varyExpense.setAmount += item.setAmount;
     		varyExpense.spendAmount += item.spendAmount;
 		});
+		varyExpense.percent = calPercent (varyExpense.setAmount , varyExpense.spendAmount);
 
 		return varyExpense;
     };
@@ -49,12 +51,13 @@ app.factory("caculationFactory", function(){
 			savingFor.goal += item.goal;
     		savingFor.saveAmount += item.saveAmount;
 		});
+		savingFor.percent = calPercent (savingFor.goal , savingFor.saveAmount);
 
 		return savingFor;
     };
 
     let calPercent = (totNum , useNum) => {
-    	return (useNum * 100)/totNum;
+    	return Math.round((useNum * 100)/totNum);
     }
 
 

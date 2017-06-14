@@ -1,4 +1,4 @@
-app.controller("newExpenseCtrl", function($rootScope, $http, $location, $q, $scope, FIREBASE_CONFIG, FirebaseFactory) {
+app.controller("newSavingCtrl", function($rootScope, $http, $location, $q, $scope, FIREBASE_CONFIG, FirebaseFactory) {
 
 	$scope.addNewSaving = () => {
 		$scope.newTask.spendAmount = 0;

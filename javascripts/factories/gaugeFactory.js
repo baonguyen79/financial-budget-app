@@ -10,8 +10,8 @@ app.factory("gaugeFactory", function(){
 
 	 var gauge1 = new RadialGauge({
         renderTo: 'canvas-id',
-        width: 200,
-        height: 200,
+        width: 250,
+        height: 250,
         units: "",
         //title: "",
 
@@ -88,10 +88,48 @@ app.factory("gaugeFactory", function(){
 
     });
 
-
     
     var LinearGauge1 = new LinearGauge({
-            renderTo: 'linearCanvas-id',
+            renderTo: 'linearCanvas-id1',
+            width: 100,
+            height: 300,
+            units: "%",
+            minValue: 0,
+            maxValue: 100,
+            majorTicks: [
+                "0",
+                "20",
+                "40",
+                "60",
+                "80",
+                "100"
+            ],
+            minorTicks: 2,
+            strokeTicks: true,
+            highlights: [
+                {
+                    "from": 80,
+                    "to": 100,
+                    "color": "rgba(200, 50, 50, .75)"
+                }
+            ],
+            colorPlate: "#fff",
+            borderShadowWidth: 0,
+            borders: false,
+            needleType: "arrow",
+            needleWidth: 5,
+            animationDuration: 1500,
+            animationRule: "linear",
+            tickSide: "left",
+            numberSide: "left",
+            needleSide: "left",
+            barStrokeWidth: 2,
+            barBeginCircle: false,
+            value: 0
+    });
+
+    var LinearGauge2 = new LinearGauge({
+            renderTo: 'linearCanvas-id2',
             width: 100,
             height: 300,
             units: "%",
@@ -144,13 +182,21 @@ app.factory("gaugeFactory", function(){
          console.log("drawLinerGauge value" , valIn);
     };
 
+    let drawLinearGauge2 = (valIn) => {
+         LinearGauge2.draw(); 
+         LinearGauge2.value = valIn;
+         LinearGauge2.update();
+         console.log("drawLinerGauge value" , valIn);
+    };
+
 
 
 	
 	
 
 	return {drawGauge:drawGauge
-          , drawLinearGauge1:drawLinearGauge1};
+          , drawLinearGauge1:drawLinearGauge1
+          , drawLinearGauge2:drawLinearGauge2 };
 		  
 
 });

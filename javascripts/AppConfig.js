@@ -44,8 +44,8 @@ app.config(function($routeProvider) {
 			controller: 'AuthCtrl'
 		})
         .when('/start', {
-            templateUrl: 'partials/incomes.html',
-            controller: 'getIncomeCtrl'
+            templateUrl: 'partials/main-screen.html',
+            controller: 'mainCtrl'
                
         })
         .when('/start/new-expense', {
