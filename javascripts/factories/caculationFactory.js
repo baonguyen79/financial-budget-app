@@ -53,12 +53,17 @@ app.factory("caculationFactory", function(){
 		return savingFor;
     };
 
+    let calPercent = (totNum , useNum) => {
+    	return (useNum * 100)/totNum;
+    }
+
 
 	
 
 	return {totalIncome:totalIncome
 		   , totalFixExpenses:totalFixExpenses
 		   , totalVaryExpenses:totalVaryExpenses
-		   , totalSavingFor:totalSavingFor};
+		   , totalSavingFor:totalSavingFor
+		   , calPercent:calPercent};
 
 });

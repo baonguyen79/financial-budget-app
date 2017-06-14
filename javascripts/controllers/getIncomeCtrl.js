@@ -1,4 +1,4 @@
-app.controller("getIncomeCtrl", function($rootScope, $scope, getFirebaseFactory, caculationFactory) {
+app.controller("getIncomeCtrl", function($rootScope, $scope, FirebaseFactory, caculationFactory, gaugeFactory) {
 	// $scope.items = [];
 
 	$scope.totalIncome = 0;
@@ -7,30 +7,41 @@ app.controller("getIncomeCtrl", function($rootScope, $scope, getFirebaseFactory,
 	// $scope.totalVaryExpenses.spendAmount = 0;
 
 	let uid = "pLPQeobtWxV9Y2qiN9T3R6BgsKs1";
+	let perValue = 0;
 
 	let getAll = () => {
-		// getFirebaseFactory.getIncomes($rootScope.user.uid).then((incomes) => {
-		getFirebaseFactory.getIncomes(uid).then((incomes) => {
+		// FirebaseFactory.getIncomes($rootScope.user.uid).then((incomes) => {
+		FirebaseFactory.getIncomes(uid).then((incomes) => {
 			$scope.totalIncome = caculationFactory.totalIncome(incomes);
+			gaugeFactory.drawGauge(20);
 
+			$('.js-gauge--1').kumaGauge({
+				value: 75,
+				fill : '0-#fa4133:0-#fdbe37:50-#1cb42f:100',
+				showNeedle: false,
+				gaugeWidth: 30,
+				radius: 70,
+				background: 'lavender'
 
+			});
+						
 			console.log("income " , incomes , " " , $scope.totalIncome);
 			
 		}).catch((error) => {
 			console.log("getIncomes Error", error);
 		});
 
-		getFirebaseFactory.getFixExpenses(uid).then((fixExpenses) => {
+		FirebaseFactory.getFixExpenses(uid).then((fixExpenses) => {
 			$scope.totalFixExpenses = caculationFactory.totalFixExpenses(fixExpenses);
 
-
+			gaugeFactory.drawLinearGauge1(75);
 			console.log("fixExpenses " , fixExpenses , " " , $scope.totalFixExpenses);
 			
 		}).catch((error) => {
 			console.log("getfixExpenses Error", error);
 		});
 
-		getFirebaseFactory.getVaryExpenses(uid).then((varyExpenses) => {
+		FirebaseFactory.getVaryExpenses(uid).then((varyExpenses) => {
 			$scope.totalVaryExpenses = caculationFactory.totalVaryExpenses(varyExpenses);
 
 			// $scope.totalVaryExpenses.setAmount ;
@@ -43,9 +54,10 @@ app.controller("getIncomeCtrl", function($rootScope, $scope, getFirebaseFactory,
 		});
 
 
-		getFirebaseFactory.getSavingFor(uid).then((savingFor) => {
-			$scope.totalSavingFor = caculationFactory.totalSavingFor(savingFor);
+		FirebaseFactory.getSavingFor(uid).then((savingFor) => {
 
+			$scope.totalSavingFor = caculationFactory.totalSavingFor(savingFor);
+			console.log("percent" , caculationFactory.calPercent(2000 , 25))
 			// $scope.totalVaryExpenses.setAmount ;
 			// $scope.totalVaryExpenses.spendAmount 0;
 
@@ -58,6 +70,7 @@ app.controller("getIncomeCtrl", function($rootScope, $scope, getFirebaseFactory,
 	};
 
 	getAll();
+	
 
 });	
 

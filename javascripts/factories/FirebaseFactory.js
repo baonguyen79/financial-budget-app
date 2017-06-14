@@ -1,4 +1,4 @@
-app.factory("getFirebaseFactory", function($q, $http, FIREBASE_CONFIG){
+app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 	
 	let getIncomes = (userId) => {
 		let allIncomes = [];
@@ -104,10 +104,24 @@ app.factory("getFirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
+
+	let postNewVaryExpense = (newItem) => {
+		return $q((resolve, reject) =>{
+			$http.post(`${FIREBASE_CONFIG.databaseURL}/varyExpenses.json`, JSON.stringify(newItem))
+				.then((resultz) => {
+					console.log ("post" , resultz);
+					resolve(resultz);
+				}).catch((error) => {
+					reject(error);
+				});
+		});
+	};
+
 	return {getIncomes:getIncomes
 		  , getFixExpenses:getFixExpenses 
 		  , getVaryExpenses:getVaryExpenses
 		  , getSavingFor:getSavingFor
-		  , getSaving};
+		  , getSaving:getSaving
+		  , postNewVaryExpense:postNewVaryExpense};
 
 });
