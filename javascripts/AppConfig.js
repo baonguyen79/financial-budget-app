@@ -38,30 +38,42 @@ app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthFactory) {
 });
 
 app.config(function($routeProvider) {
-    $routeProvider
-    	.when('/auth', {
-			templateUrl: 'partials/auth.html',
-			controller: 'AuthCtrl'
-		})
-        .when('/start', {
-            templateUrl: 'partials/main-screen.html',
-            controller: 'mainCtrl'
-               
-        })
-        .when('/start/new-expense', {
-			templateUrl: 'partials/new-expense.html',
-			controller: 'newExpenseCtrl',
-			// resolve : {isAuth}
-		})
-		.when('/start/new-saving-for', {
-			templateUrl: 'partials/new-saving.html',
-			controller: 'newSavingCtrl',
-			resolve : {isAuth}
-		})
-        .when('/logout', {
-			templateUrl: 'partials/auth.html',
-			controller: 'AuthCtrl',
-			resolve : {isAuth}
-		})
-		.otherwise('/auth');
+  $routeProvider
+  .when('/auth', {
+   templateUrl: 'partials/auth.html',
+   controller: 'AuthCtrl'
+ })
+  .when('/start', {
+    templateUrl: 'partials/main-screen.html',
+    controller: 'mainAllCtrl',
+    resolve : {isAuth}   
+  })
+  .when('/start/list-varyExpenses', {
+   templateUrl: 'partials/list-vary-expenses.html',
+   controller: 'ListVaryExpenseCtrl',
+   resolve : {isAuth}
+ })
+
+  .when('/varyExpenses/edit/:id', {
+      templateUrl: 'partials/vary-expense.html',
+      controller: 'varyExpenseEditCtrl',
+      resolve : {isAuth}
+    })
+    
+  .when('/new/vary-expense', {
+   templateUrl: 'partials/vary-expense.html',
+   controller: 'newExpenseCtrl',
+   resolve : {isAuth}
+ })
+  .when('/start/new-saving-for', {
+   templateUrl: 'partials/new-saving.html',
+   controller: 'newSavingCtrl',
+   resolve : {isAuth}
+ })
+  .when('/logout', {
+   templateUrl: 'partials/auth.html',
+   controller: 'AuthCtrl',
+   resolve : {isAuth}
+ })
+  .otherwise('/auth');
 });

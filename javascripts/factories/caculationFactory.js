@@ -44,14 +44,15 @@ app.factory("caculationFactory", function(){
     };
 
 
-    let totalSavingFor = (savingFor) => {
+    let totalSavingFor = (items) => {
     	savingFor.goal = 0;
     	savingFor.saveAmount = 0;
-		savingFor.forEach ((item) => {
+		items.forEach ((item) => {
 			savingFor.goal += item.goal;
     		savingFor.saveAmount += item.saveAmount;
 		});
 		savingFor.percent = calPercent (savingFor.goal , savingFor.saveAmount);
+		console.log("---" , savingFor);
 
 		return savingFor;
     };
@@ -60,6 +61,15 @@ app.factory("caculationFactory", function(){
     	return Math.round((useNum * 100)/totNum);
     }
 
+    let totalSaving = (savings) => {
+    	console.log("cal saving" , savings);
+		sum = 0;
+		savings.forEach ((item) => {
+			sum += item.amount;
+		});
+
+		return sum;
+    };
 
 	
 
@@ -67,6 +77,7 @@ app.factory("caculationFactory", function(){
 		   , totalFixExpenses:totalFixExpenses
 		   , totalVaryExpenses:totalVaryExpenses
 		   , totalSavingFor:totalSavingFor
-		   , calPercent:calPercent};
+		   , calPercent:calPercent
+		   , totalSaving:totalSaving};
 
 });

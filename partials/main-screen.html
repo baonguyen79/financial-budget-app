@@ -1,13 +1,13 @@
 <div class="row">
-  <div class="col-xs-2 col-md-3">
+  <div class="col-md-2">
     <div class="thumbnail">
-    <h4>Vary Expenses</h4>
      <canvas id="linearCanvas-id1"></canvas>
-      <p>Set amount: {{totalVaryExpenses.setAmount}}</p> 
-      <p>Spend amount: {{totalVaryExpenses.spendAmount}}</p> 
-      <!-- <img src="..." alt="..."> -->
-    </div>
-  </div>
+     <h4>Vary Expenses</h4>
+     <p>Set amount: {{totVaryExpenses.setAmount}}</p> 
+     <p>Spend amount: {{totVaryExpenses.spendAmount}}</p> 
+     <!-- <img src="..." alt="..."> -->
+   </div>
+ </div>
 
   <div class="col-md-2">
     <div class="thumbnail">
@@ -30,37 +30,45 @@
 
 </div>
 
-<div class="row-fluid">
+<div class="row-fluid text-center">
 	<div class="col-sm-2">
-	 <div class="panel panel-default">
+	 <div class="panel panel-default text-center">
 		<div class="js-gauge js-gauge--1 gauge"></div>
-    <p>% of total expenses</p>
+    <p>% of tot expenses</p>
     <h4>Fix Expenses </h4> 
-		<p>Amount: {{allFixExpenses}}</p> 
+		<p>Amount: {{totFixExpenses}}</p> 
 	</div>
 	</div>
 
   <div class="col-sm-2">
    <div class="panel panel-default">
     <div class="js-gauge js-gauge--2 gauge"></div>
-     <p>% of total expenses</p>
+     <p>% of tot expenses</p>
     <h4>Vary Expenses </h4> 
-    <p>set amount: {{allVaryExpenses.setAmount}} spend amount: {{allVaryExpenses.spendAmount}}</p> 
+    <p>set amount: {{totVaryExpenses.setAmount}} spend amount: {{totVaryExpenses.spendAmount}}</p> 
   </div>
   </div>
 
 	<div class="col-sm-4">
 	 <div class="panel panel-default">
 		<canvas id="canvas-id"></canvas>
-		<h3>Total all expenses: {{totalAllExpenses}}   all incomes: {{totalIncome}}</h3>
+		<h3>Expenses: {{totAllExpenses}} / Incomes: {{totIncomes}}</h3>
 	</div>
 	</div>
 
 	<div class="col-sm-2">
 	 <div class="panel panel-default">
 		<div class="js-gauge js-gauge--3 gauge"></div>
-    <h4>Saving</h4> 
-		<p>goal: {{totalSavingFor.goal}}  Saved amount: {{totalSavingFor.saveAmount}} </p> 
+    <h4>Saving for</h4> 
+		<p>goal: {{totSavingFor.goal}}  Saved amount: {{totSavingFor.saveAmount}} </p> 
 	</div>		
 	</div>
+
+  <div class="col-sm-2">
+   <div class="panel panel-default">
+    <img src="./Images/money-coin-deposit-of-save-money.jpg" alt="..." width="195" height="220">
+    <h3>Saving</h3> 
+    <h5>${{totSaving}}</h5> 
+  </div>    
+  </div>
 </div>

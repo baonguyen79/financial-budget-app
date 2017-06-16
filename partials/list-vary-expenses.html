@@ -1,0 +1,16 @@
+<h3>Vary Expenses</h3>
+<!-- <div ng-repeat="item in items | filter:{isCompleted:true}"> -->
+<div ng-repeat="item in items">
+  <div class="col-md-8 col-md-offset-2">
+  <div class="panel panel-default">
+    <!-- <div class="panel-body"> -->
+      <h4>{{item.title}}</h4>
+      <div>set amount: {{item.setAmount}}  spend amount: {{item.spendAmount}}             Date:{{item.date}}
+       
+       <button class="btn btn-warning pull-right"><a ng-href="#!/varyExpenses/edit/{{Item.id}}">Edit</a></button>
+       <button class="btn btn-danger fa fa-trash-o pull-right" ng-click="deleteItem(item.id)"></button>
+   </div>
+   </div>
+ <!-- </div> -->
+</div>
+</div>

@@ -5,13 +5,13 @@
 	<link rel="stylesheet" type="text/css" href="./lib/bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<!-- <link rel="stylesheet" type="text/css" href="./styles/main.css"> -->
+	<link rel="stylesheet" type="text/css" href="./styles/main.css">
 
  </head>
 <body ng-app="budgetApp">
  <div ng-include="'partials/navbar.html'"></div>
 <div class="container-fluid">
-	<h1>Financial Budget App</h1>
+	<!-- <h1>Financial Budget App</h1> -->
 	<div ng-view></div>  
 </div>  
 
@@ -41,7 +41,9 @@
 
 	<script type="text/javascript" src="./javascripts/controllers/AuthCtrl.js"></script>
     <script type="text/javascript" src="./javascripts/controllers/NavCtrl.js"></script>
-	<script type="text/javascript" src="./javascripts/controllers/mainCtrl.js"></script>
+	<script type="text/javascript" src="./javascripts/controllers/mainAllCtrl.js"></script>
+	<!-- <script type="text/javascript" src="./javascripts/controllers/mainCtrl.js"></script> -->
+    <script type="text/javascript" src="./javascripts/controllers/ListVaryExpenseCtrl.js"></script>
 	<script type="text/javascript" src="./javascripts/controllers/newExpenseCtrl.js"></script>
 	<script type="text/javascript" src="./javascripts/controllers/newSavingCtrl.js"></script>
 </body>

@@ -12,8 +12,41 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" ng-if="user.uid">
-        <li><a ng-href="#!/start/new-expense">Add New Expense</a></li>
-        <li><a ng-href="#!/start/new-saving-for">Add New Saving</a></li>
+        <!-- <li><a ng-href="#!/start/new-expense">Add New Expense</a></li> -->
+        <!-- <li><a ng-href="#!/start/new-saving-for">Add New Saving</a></li> -->
+        <li><a ng-href="#!/start">Home</a></li>
+        <li uib-dropdown on-toggle="toggled(open)" >
+          <a href id="simple-dropdown" uib-dropdown-toggle>Incomes <span class="caret"></span> </a>
+          <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+            <li> <a href>List All Incomes</a> </li>
+            <li><a ng-href="#!/start/new-expense">Add New Income</a></li>
+          </ul>
+        </li> 
+
+        <li uib-dropdown on-toggle="toggled(open)" >
+          <a href id="simple-dropdown" uib-dropdown-toggle>Fix Expenses <span class="caret"></span> </a>
+          <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+            <li> <a href>List All Fix Expenses</a> </li>
+            <li><a ng-href="#!/new/vary-expense">Add New Fix Expense</a></li>
+          </ul>
+        </li>
+
+        <li uib-dropdown on-toggle="toggled(open)" >
+          <a href id="simple-dropdown" uib-dropdown-toggle>Vary Expenses <span class="caret"></span> </a>
+          <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+            <li> <a ng-href="#!/start/list-varyExpenses">List All Vary Expenses</a> </li>
+            <li><a ng-href="#!/start/new-expense">Add New Vary Expense</a></li>
+          </ul>
+        </li>
+
+        <li uib-dropdown on-toggle="toggled(open)">
+          <a href id="simple-dropdown" uib-dropdown-toggle>Saving For <span class="caret"></span> </a>
+          <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+            <li> <a href>List All Saving For</a> </li>
+            <li> <a href>Add New Saving For</a> </li>
+          </ul>
+        </li>      
+
         <li><a ng-href="#!/logout">Logout</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right" ng-if="!user.uid">

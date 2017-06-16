@@ -73,11 +73,12 @@
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
 	}
   },
-  "saving" : {
-	"amount": 1234,
-	"uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
-  },
-  
+  "savings" : {
+  	"saving1": {
+		"amount": 1234,
+		"uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+	  }
+   },	  
   "users" : {
     "user0" : {
       "uid" : "pLPQeobtWxV9Y2qiN9T3R6BgsKs1",
