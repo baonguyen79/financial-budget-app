@@ -39,6 +39,7 @@
 	  "date" : "01/01/2017",
 	  "setAmount": 200,
 	  "spendAmount" : 100,
+	  "monitorId": "1",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     },
 	 "varyExpense2" : {
@@ -47,6 +48,7 @@
 	  "date" : "01/01/2017",
 	  "setAmount" : 100,
 	  "spendAmount" : 50,
+	  "monitorId": "2",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     }
   },
@@ -56,20 +58,17 @@
 	  "title" : "vacatiion",
 	  "goal" : 1234,
 	  "saveAmount" : 123,
+	  "monitorId": "1",
+	  "imageUrl": "https://s3.amazonaws.com/harmony-live/harmonyoftheseas/wp-content/uploads/2016/08/HM-Aerials-June2016-598.jpg",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
 	},
 	"savingFor2" : {
 	  "month": "01",	
-	  "title" : "emergency",
-	  "goal" : 1234,
-	  "saveAmount" : 123,
-	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
-	},
-	"savingFor3" : {
-	  "month": "01",	
 	  "title" : "new car",
 	  "goal" : 1234,
 	  "saveAmount" : 123,
+	   "monitorId": "2",
+	  "imageUrl": "",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
 	}
   },

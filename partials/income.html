@@ -1,0 +1,38 @@
+<h3>{{heading}}</h3>
+<div>
+  <div class="form-group row">
+
+    <div class="col-xs-6">
+      <label>Income Type</label>
+      <input id="title" type="text" class="form-control col-10" placeholder="type of expense" ng-model="newTask.title" />
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <div class="col-xs-6">
+      <label>Amount</label>
+      <input type="text" class="form-control" placeholder="amount" ng-model="newTask.amount" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-6">
+      <label>For month period</label>
+      <input type="text" class="form-control" placeholder="month" ng-model="newTask.month" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-6">
+      <p class="input-group">
+      <input type="date" class="form-control" uib-datepicker-popup ng-model="newTask.date" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="isOpened2 = !isOpened2"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <button class="btn btn-default" ng-click="addNewIncome()">Submit</button>
+  </div>

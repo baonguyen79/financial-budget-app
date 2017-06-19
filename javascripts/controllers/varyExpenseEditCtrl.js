@@ -1,8 +1,10 @@
 app.controller("varyExpenseEditCtrl", function($location, $routeParams, $scope, FirebaseFactory) {
 	$scope.newTask = {};
+	$scope.heading = "Edit Vary Expense Item";
 
 	FirebaseFactory.getSingleVaryExpense($routeParams.id).then((results) => {
-		console.log("results", results);
+		console.log("getSingleVaryExpense results", results);
+		results.data.date = new Date(results.data.date)
 		$scope.newTask = results.data;
 	}).catch((error) => {
 		console.log("getSingleVaryExpense", error);

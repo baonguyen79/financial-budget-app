@@ -48,28 +48,75 @@ app.config(function($routeProvider) {
     controller: 'mainAllCtrl',
     resolve : {isAuth}   
   })
+  //Income//
+  .when('/start/list-incomes', {
+   templateUrl: 'partials/list-incomes.html',
+   controller: 'ListIncomesCtrl',
+   resolve : {isAuth}
+ })
+  .when('/income/new', {   
+   templateUrl: 'partials/income.html',
+   controller: 'newIncomeCtrl',
+   resolve : {isAuth}
+ })
+ .when('/income/edit/:id', {  
+   templateUrl: 'partials/income.html',
+   controller: 'editIncomeCtrl',
+   resolve : {isAuth}
+ })
+
+ //Fix expenses
+ .when('/start/list-fixExpenses', {
+   templateUrl: 'partials/list-fix-expenses.html',
+   controller: 'ListFixExpenseCtrl',
+   resolve : {isAuth}
+ })
+  .when('/fixExpenses/edit/:id', {
+    templateUrl: 'partials/fix-expense.html',
+    controller: 'editFixExpenseCtrl',
+    resolve : {isAuth}
+  })
+  .when('/fixExpense/new', {
+   templateUrl: 'partials/fix-expense.html',
+   controller: 'newFixExpenseCtrl',
+   resolve : {isAuth}
+ })
+
+  //Vary Expenses//
   .when('/start/list-varyExpenses', {
    templateUrl: 'partials/list-vary-expenses.html',
    controller: 'ListVaryExpenseCtrl',
    resolve : {isAuth}
  })
-
   .when('/varyExpenses/edit/:id', {
-      templateUrl: 'partials/vary-expense.html',
-      controller: 'varyExpenseEditCtrl',
-      resolve : {isAuth}
-    })
-    
+    templateUrl: 'partials/vary-expense.html',
+    controller: 'varyExpenseEditCtrl',
+    resolve : {isAuth}
+  })
   .when('/new/vary-expense', {
    templateUrl: 'partials/vary-expense.html',
-   controller: 'newExpenseCtrl',
+   controller: 'newVaryExpenseCtrl',
    resolve : {isAuth}
  })
-  .when('/start/new-saving-for', {
-   templateUrl: 'partials/new-saving.html',
-   controller: 'newSavingCtrl',
+
+//Saving for//
+   .when('/start/list-goalSaving', {
+   templateUrl: 'partials/list-savingFor.html',
+   controller: 'ListGoalSavingCtrl',
    resolve : {isAuth}
  })
+  .when('/goal-saving/edit/:id', {
+    templateUrl: 'partials/savingFor.html',
+    controller: 'editGoalSavingCtrl',
+    resolve : {isAuth}
+  })
+  .when('/goal-saving/new-saving-for', {
+   templateUrl: 'partials/savingFor.html',
+   controller: 'newSavingForCtrl',
+   resolve : {isAuth}
+ })
+
+  //Log out
   .when('/logout', {
    templateUrl: 'partials/auth.html',
    controller: 'AuthCtrl',

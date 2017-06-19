@@ -4,7 +4,6 @@ app.controller("ListVaryExpenseCtrl", function($rootScope, $scope, $location, Fi
 	let getItems = () => {
 		FirebaseFactory.getVaryExpenses($rootScope.user.uid).then((varyExpenses) => {
 			$scope.items = varyExpenses;
-			console.log("varyExpenses " , varyExpenses);
 			
 		}).catch((error) => {
 			console.log("getVaryExpenses Error", error);
@@ -13,6 +12,23 @@ app.controller("ListVaryExpenseCtrl", function($rootScope, $scope, $location, Fi
 
 
 	getItems();
+
+	$scope.deleteItem = (id) => {
+		FirebaseFactory.deleteVaryExpense(id).then(() => {
+				getItems();
+		}).catch((error) => {
+			console.log("delete Vary Expense error", error);
+		});
+	};
+
+
+	// $scope.inputChange = (item) => {
+	// 	console.log("inputChange" , item)
+	// 	FirebaseFactory.editVaryExpense(item).then(() => {
+	// 	}).catch((error) => {
+	// 		console.log("vary expense inputChange error", error);
+	// 	});
+	// };
 
 	
 });

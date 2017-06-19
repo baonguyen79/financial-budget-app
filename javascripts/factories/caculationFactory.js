@@ -52,7 +52,7 @@ app.factory("caculationFactory", function(){
     		savingFor.saveAmount += item.saveAmount;
 		});
 		savingFor.percent = calPercent (savingFor.goal , savingFor.saveAmount);
-		console.log("---" , savingFor);
+		// console.log("---" , savingFor);
 
 		return savingFor;
     };

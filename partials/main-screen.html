@@ -2,72 +2,104 @@
   <div class="col-md-2">
     <div class="thumbnail">
      <canvas id="linearCanvas-id1"></canvas>
-     <h4>Vary Expenses</h4>
-     <p>Set amount: {{totVaryExpenses.setAmount}}</p> 
-     <p>Spend amount: {{totVaryExpenses.spendAmount}}</p> 
-     <!-- <img src="..." alt="..."> -->
+     <h4>{{title1}}</h4>
+     <p>Set: ${{setAmount1}}</p> 
+     <p>Spend: ${{spendAmount1}}</p> 
    </div>
  </div>
 
   <div class="col-md-2">
     <div class="thumbnail">
-      <canvas id="linearCanvas-id2"></canvas>
+     <canvas id="linearCanvas-id2"></canvas>
+     <h4>{{title2}}</h4>
+     <p>Set: ${{setAmount2}}</p> 
+     <p>Spend: ${{spendAmount2}}</p> 
     </div>
   </div>
 
   <div class="col-md-2">
     <div class="thumbnail">
-      <!-- <canvas id="linearCanvas-id3"></canvas> -->
+     <canvas id="linearCanvas-id3"></canvas>
+     <h4>{{title3}}</h4>
+     <p>Set: ${{setAmount3}}</p> 
+     <p>Spend: ${{spendAmount3}}</p> 
+    </div>
+  </div>
+ 
+<!-- <canvas id="pie" class="chart chart-pie"
+  chart-data="data" chart-labels="labels" chart-options="options">
+</canvas>  -->
+
+  <div class="col-md-2">
+    <div class="thumbnail">
+      <canvas id="linearCanvas-id4"></canvas>
+      <h4>{{title4}}</h4>
+      <p>Goal: ${{goalAmount4}}</p> 
+      <p>Saved: ${{saveAmount4}}</p> 
+      <img ng-src="{{imageUrl4}}">
     </div>
   </div>
 
   <div class="col-md-2">
     <div class="thumbnail">
-      <!-- <img src="..." alt="..."> -->
-		<!-- <canvas id="linearCanvas-id4"></canvas> -->
+      <canvas id="linearCanvas-id5"></canvas>
+      <h4>{{title5}}</h4>
+      <p>Goal: ${{goalAmount5}}</p> 
+      <p>Saved: ${{saveAmount5}}</p> 
+      <img ng-src="{{imageUrl5}}">
     </div>
   </div>
+
+
+  
 
 </div>
 
+<!-- Main monitor    -->
 <div class="row-fluid text-center">
 	<div class="col-sm-2">
 	 <div class="panel panel-default text-center">
 		<div class="js-gauge js-gauge--1 gauge"></div>
-    <p>% of tot expenses</p>
-    <h4>Fix Expenses </h4> 
-		<p>Amount: {{totFixExpenses}}</p> 
+    <h4>Fixed Expenses </h4> 
+    <p>% of Income</p>
+		<p>Total: ${{totFixExpenses}}</p> 
 	</div>
 	</div>
 
   <div class="col-sm-2">
    <div class="panel panel-default">
     <div class="js-gauge js-gauge--2 gauge"></div>
-     <p>% of tot expenses</p>
-    <h4>Vary Expenses </h4> 
-    <p>set amount: {{totVaryExpenses.setAmount}} spend amount: {{totVaryExpenses.spendAmount}}</p> 
+    <h4>Variable Expenses </h4> 
+     <p>% of Income</p>
+    <p>Total <br>
+     Set: ${{totVaryExpenses.setAmount}} <br>
+     Spend: ${{totVaryExpenses.spendAmount}}</p> 
   </div>
   </div>
 
 	<div class="col-sm-4">
 	 <div class="panel panel-default">
 		<canvas id="canvas-id"></canvas>
-		<h3>Expenses: {{totAllExpenses}} / Incomes: {{totIncomes}}</h3>
+		<h4>Incomes: ${{totIncomes}} <br>
+    Available Funds: ${{avalFund}}</h4>
 	</div>
 	</div>
 
 	<div class="col-sm-2">
 	 <div class="panel panel-default">
 		<div class="js-gauge js-gauge--3 gauge"></div>
-    <h4>Saving for</h4> 
-		<p>goal: {{totSavingFor.goal}}  Saved amount: {{totSavingFor.saveAmount}} </p> 
+    <h4>Saving For</h4> 
+     <p>% of Goal</p>
+		<p>Total <br>
+     Goal: ${{totSavingFor.goal}} <br>
+     Saved: ${{totSavingFor.saveAmount}} </p> 
 	</div>		
 	</div>
 
   <div class="col-sm-2">
    <div class="panel panel-default">
     <img src="./Images/money-coin-deposit-of-save-money.jpg" alt="..." width="195" height="220">
-    <h3>Saving</h3> 
+    <h3>Surplus</h3> 
     <h5>${{totSaving}}</h5> 
   </div>    
   </div>
