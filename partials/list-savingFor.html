@@ -1,0 +1,27 @@
+<h3>Short Term Saving</h3>
+<!-- <table st-table="rowCollection" class="table table-striped"> --> 
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Goal</th>
+    <th>Saved Amount</th>
+    <th>Month</th>
+    
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="item in items">
+    <td>{{item.title}}</td>
+    <td>{{item.goal}}</td>
+    <td>{{item.saveAmount}}</td>
+    <td>{{item.month}}</td>
+    <td>{{item.monitorId}}</td>
+    <!-- <td>{{item.date | date : "MM/dd/y"}}</td> -->
+    <td>
+    <button class="pull-right"><a ng-href="#!/goal-saving/edit/{{item.id}}">Edit</a><i class="fa fa-pencil" aria-hidden="true"></i></button>
+       <button class="pull-right" ng-click="deleteItem(item.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+    </td>
+  </tr>
+  </tbody>
+</table>

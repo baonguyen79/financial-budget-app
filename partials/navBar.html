@@ -11,9 +11,43 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right" ng-if="user.uid">
-        <li><a ng-href="#!/start/new-expense">Add New Expense</a></li>
-        <li><a ng-href="#!/start/new-saving-for">Add New Saving</a></li>
+      <!-- <ul class="nav navbar-nav navbar-right" ng-if="user.uid"> -->
+      <ul class=" nav nav-pills navbar-right" ng-if="user.uid">
+        <!-- <li><a ng-href="#!/start/new-expense">Add New Expense</a></li> -->
+        <!-- <li><a ng-href="#!/start/new-saving-for">Add New Saving</a></li> -->
+        <li role="presentation"><a ng-href="#!/start">Home</a></li>
+        <li uib-dropdown on-toggle="toggled(open)" >
+          <a href id="simple-dropdown" uib-dropdown-toggle>Incomes <span class="caret"></span> </a>
+          <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+            <li> <a ng-href="#!/start/list-incomes">List All Incomes</a> </li>
+            <li><a ng-href="#!/income/new">Add New Income</a></li>
+          </ul>
+        </li> 
+
+        <li uib-dropdown on-toggle="toggled(open)" >
+          <a href id="simple-dropdown" uib-dropdown-toggle>Fixed Expenses <span class="caret"></span> </a>
+          <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+            <li> <a ng-href="#!/start/list-fixExpenses">List Fixed Expenses</a> </li>
+            <li><a ng-href="#!/fixExpense/new">Add New Fixed Expense</a></li>
+          </ul>
+        </li>
+
+        <li uib-dropdown on-toggle="toggled(open)" >
+          <a href id="simple-dropdown" uib-dropdown-toggle>Variable Expenses <span class="caret"></span> </a>
+          <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+            <li> <a ng-href="#!/start/list-varyExpenses">List Variable Expenses</a> </li>
+            <li><a ng-href="#!/new/vary-expense">Add New Variable Expense</a></li>
+          </ul>
+        </li>
+
+        <li uib-dropdown on-toggle="toggled(open)">
+          <a href id="simple-dropdown" uib-dropdown-toggle>Saving<span class="caret"></span> </a>
+          <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+            <li> <a ng-href="#!/start/list-goalSaving">List Saving</a> </li>
+            <li> <a ng-href="#!/goal-saving/new-saving-for">Add New Saving</a> </li>
+          </ul>
+        </li>      
+
         <li><a ng-href="#!/logout">Logout</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right" ng-if="!user.uid">

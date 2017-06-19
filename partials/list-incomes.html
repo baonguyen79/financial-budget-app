@@ -1,0 +1,23 @@
+<h3>Incomes</h3>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>amount</th>
+    <th>date</th>
+    
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="item in items">
+    <td>{{item.title}}</td>
+    <td>{{item.amount}}</td>
+    <td>{{item.date | date : "MM/dd/y"}}</td>
+    <td>
+    <button class="pull-right"><a ng-href="#!/income/edit/{{item.id}}">Edit</a><i class="fa fa-pencil" aria-hidden="true"></i></button>
+       <button class="pull-right" ng-click="deleteItem(item.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+

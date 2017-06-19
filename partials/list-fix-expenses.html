@@ -1,0 +1,23 @@
+<h3>Fixed expenses</h3>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Amount</th>
+    <th>Month</th>
+    
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="item in items">
+    <td>{{item.title}}</td>
+    <td>{{item.amount}}</td>
+    <td>{{item.month}}</td>
+    <td>
+    <button class="pull-right"><a ng-href="#!/income/edit/{{item.id}}">Edit</a><i class="fa fa-pencil" aria-hidden="true"></i></button>
+       <button class="pull-right" ng-click="deleteItem(item.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+

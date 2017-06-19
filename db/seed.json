@@ -5,7 +5,7 @@
 	  "month": "01",	
       "title" : "paycheck",
 	  "date" : "01/01/2017",
-	  "amount" : 1234,
+	  "amount" : 3000,
       "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     },
 	
@@ -13,7 +13,7 @@
 	  "month": "01",	
       "title" : "paycheck",
 	  "date" : "01/01/2017",
-	  "amount" : 1234,
+	  "amount" : 1000,
       "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     
     }
@@ -22,13 +22,13 @@
       "fixExpense1" : {
 	  "month": "01",	
 	  "title" : "comcast",
-	  "amount" : 1234,
+	  "amount" : 20,
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     },
 	 "fixExpense2" : {
 	  "month": "01",	
 	  "title" : "car payment",
-	  "amount" : 1234,
+	  "amount" : 30,
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     }
   },
@@ -37,16 +37,18 @@
 	  "month": "01",	
 	  "title" : "food",
 	  "date" : "01/01/2017",
-	  "setAmount" : 1234,
-	  "spendAmount" : 1234,
+	  "setAmount": 200,
+	  "spendAmount" : 100,
+	  "monitorId": "1",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     },
 	 "varyExpense2" : {
 	  "month": "01",	
 	  "title" : "fun",
 	  "date" : "01/01/2017",
-	  "setAmount" : 1234,
-	  "spendAmount" : 1234,
+	  "setAmount" : 100,
+	  "spendAmount" : 50,
+	  "monitorId": "2",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     }
   },
@@ -56,28 +58,26 @@
 	  "title" : "vacatiion",
 	  "goal" : 1234,
 	  "saveAmount" : 123,
+	  "monitorId": "1",
+	  "imageUrl": "https://s3.amazonaws.com/harmony-live/harmonyoftheseas/wp-content/uploads/2016/08/HM-Aerials-June2016-598.jpg",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
 	},
 	"savingFor2" : {
 	  "month": "01",	
-	  "title" : "emergency",
-	  "goal" : 1234,
-	  "saveAmount" : 123,
-	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
-	},
-	"savingFor3" : {
-	  "month": "01",	
 	  "title" : "new car",
 	  "goal" : 1234,
 	  "saveAmount" : 123,
+	   "monitorId": "2",
+	  "imageUrl": "",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
 	}
   },
-  "saving" : {
-	"amount": 1234,
-	"uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
-  },
-  
+  "savings" : {
+  	"saving1": {
+		"amount": 1234,
+		"uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+	  }
+   },	  
   "users" : {
     "user0" : {
       "uid" : "pLPQeobtWxV9Y2qiN9T3R6BgsKs1",
