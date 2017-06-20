@@ -1,5 +1,13 @@
+
+ <div class="col-md-1" id="picture">
+      <img src="/Images/DaveRamseyWithMoney.jpg">
+      <!-- <h4>{{date | date : "MM/dd/y"}}</h4> -->
+</div>
+
+
+
 <div class="row">
-  <div class="col-md-2">
+  <div class="col-xs-2">
     <div class="thumbnail">
      <canvas id="linearCanvas-id1"></canvas>
      <h4>{{title1}}</h4>
@@ -36,7 +44,9 @@
       <h4>{{title4}}</h4>
       <p>Goal: ${{goalAmount4}}</p> 
       <p>Saved: ${{saveAmount4}}</p> 
+      <a href="{{imageUrl4}}">
       <img ng-src="{{imageUrl4}}">
+      </a>
     </div>
   </div>
 
@@ -46,11 +56,16 @@
       <h4>{{title5}}</h4>
       <p>Goal: ${{goalAmount5}}</p> 
       <p>Saved: ${{saveAmount5}}</p> 
+       <a href="{{imageUrl5}}">
       <img ng-src="{{imageUrl5}}">
+      </a>
     </div>
   </div>
 
-
+ <!--  <div class="col-md-1" id="picture">
+      <img src="/Images/DaveRamseyWithMoney.jpg">
+      <h4>{{date | date : "MM/dd/y"}}</h4>
+</div> -->
   
 
 </div>
@@ -80,9 +95,13 @@
 	<div class="col-sm-4">
 	 <div class="panel panel-default">
 		<canvas id="canvas-id"></canvas>
-		<h4>Incomes: ${{totIncomes}} <br>
+    <div id="currMonth">
+        <big>Current Month: {{month}}</big>
+        <input type="text" class="label label-info" ng-model="month"/>
+    <h4>Incomes: ${{totIncomes}} <br>
     Available Funds: ${{avalFund}}</h4>
-	</div>
+    </div>   
+  </div>
 	</div>
 
 	<div class="col-sm-2">

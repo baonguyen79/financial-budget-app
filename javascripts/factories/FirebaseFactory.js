@@ -2,7 +2,7 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 	//************************************
 	//*  Incomes Functions               *
 	//************************************
-	let getIncomes = (userId) => {
+	let getIncomes = (userId , month) => {
 		let allIncomes = [];
 		return $q((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/incomes.json?orderBy="uid"&equalTo="${userId}"`)
@@ -10,8 +10,11 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 					let itemCollection = fbItems.data;
           if(itemCollection !== null ){
 	          Object.keys(itemCollection).forEach((key) => {
-	            itemCollection[key].id=key;
-	            allIncomes.push(itemCollection[key]);
+	          	if (itemCollection[key].month === month)
+	          	{
+	            	itemCollection[key].id=key;
+	            	allIncomes.push(itemCollection[key]);
+	            }
 	          });          	
           }
           resolve(allIncomes);
@@ -36,6 +39,9 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 
 
 	let editIncome = (item) => {
+		item.amount = parseFloat(item.amount);
+		item.month  = parseInt(item.month);
+		// console.log ("add income" , item)
 		return $q((resolve, reject) => {
 			$http.put(`${FIREBASE_CONFIG.databaseURL}/incomes/${item.id}.json`, 
 				JSON.stringify({
@@ -55,6 +61,8 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 
 
 	let postNewIncome = (newItem) => {
+		newItem.amount = parseFloat(newItem.amount);
+		newItem.month  = parseInt(newItem.month);
 		return $q((resolve, reject) =>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/incomes.json`, JSON.stringify(newItem))
 				.then((resultz) => {
@@ -80,7 +88,7 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 	//************************************
 	//*  Fix Expense Functions           *
 	//************************************
-	let getFixExpenses = (userId) => {
+	let getFixExpenses = (userId , month) => {
 		let allFixExpenses = [];
 		return $q((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/fixExpenses.json?orderBy="uid"&equalTo="${userId}"`)
@@ -88,8 +96,12 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 					let itemCollection = fbItems.data;
           if(itemCollection !== null ){
 	          Object.keys(itemCollection).forEach((key) => {
-	            itemCollection[key].id=key;
-	            allFixExpenses.push(itemCollection[key]);
+	          	if (itemCollection[key].month === month)
+	          	{
+	          		// console.log ("FixExpense firebase" , itemCollection[key].month , " month:" , month)
+	            	itemCollection[key].id=key;
+	            	allFixExpenses.push(itemCollection[key]);
+	            }
 	          });          	
           }
           resolve(allFixExpenses);
@@ -113,7 +125,8 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 	};
 
 	let editFixExpense = (item) => {
-		// console.log("item", item);
+		item.amount = parseFloat(item.amount);
+		item.month  = parseInt(item.month);
 		return $q((resolve, reject) => {
 			$http.put(`${FIREBASE_CONFIG.databaseURL}/fixExpenses/${item.id}.json`, 
 				JSON.stringify({
@@ -132,6 +145,8 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 	};
 
 	let postNewFixExpense = (newItem) => {
+		newItem.amount = parseFloat(newItem.amount);
+		newItem.month  = parseInt(newItem.month);
 		return $q((resolve, reject) =>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/fixExpenses.json`, JSON.stringify(newItem))
 				.then((resultz) => {
@@ -159,7 +174,7 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 	//************************************
 	//*  Vary Expense Functions          *
 	//************************************
-	let getVaryExpenses = (userId) => {
+	let getVaryExpenses = (userId, month) => {
 		let AllVaryExpenses = [];
 		return $q((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/varyExpenses.json?orderBy="uid"&equalTo="${userId}"`)
@@ -167,8 +182,11 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 					let itemCollection = fbItems.data;
           if(itemCollection !== null ){
 	          Object.keys(itemCollection).forEach((key) => {
-	            itemCollection[key].id=key;
-	            AllVaryExpenses.push(itemCollection[key]);
+	          	if (itemCollection[key].month === month)
+	          	{
+	           	    itemCollection[key].id=key;
+	          		AllVaryExpenses.push(itemCollection[key]);
+	       		 }
 	          });          	
           }
           resolve(AllVaryExpenses);
@@ -194,7 +212,10 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 
 
 	let editVaryExpense = (item) => {
-		// console.log("item", item);
+		item.setAmount   = parseFloat(item.setAmount);
+		item.spendAmount = parseFloat(item.spendAmount);
+		item.month       = parseInt(item.month);
+		console.log("edit vary item", item);
 		return $q((resolve, reject) => {
 			$http.put(`${FIREBASE_CONFIG.databaseURL}/varyExpenses/${item.id}.json`, 
 				JSON.stringify({
@@ -215,9 +236,12 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 	};
 
 	
-	let postNewVaryExpense = (newItem) => {
+	let postNewVaryExpense = (item) => {
+		item.setAmount   = parseFloat(item.setAmount);
+		item.spendAmount = parseFloat(item.spendAmount);
+		item.month       = parseInt(item.month);
 		return $q((resolve, reject) =>{
-			$http.post(`${FIREBASE_CONFIG.databaseURL}/varyExpenses.json`, JSON.stringify(newItem))
+			$http.post(`${FIREBASE_CONFIG.databaseURL}/varyExpenses.json`, JSON.stringify(item))
 				.then((resultz) => {
 					console.log ("post" , resultz);
 					resolve(resultz);
@@ -278,7 +302,10 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 
 
 	let editSavingFor = (item) => {
-		// console.log("item", item);
+		item.goal 		= parseFloat(item.goal);
+		item.addAmount = parseFloat(item.addAmount);
+		item.saveAmount = parseFloat(item.saveAmount) + item.addAmount;
+		item.addAmount = 0;
 		return $q((resolve, reject) => {
 			$http.put(`${FIREBASE_CONFIG.databaseURL}/savingFor/${item.id}.json`, 
 				JSON.stringify({
@@ -287,6 +314,7 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 					month:       item.month,
 					goal: 		 item.goal,
 					saveAmount:  item.saveAmount,
+					addAmount:   item.addAmount,
 					monitorId:   item.monitorId,
 					imageUrl:    item.imageUrl,
 					uid:         item.uid
@@ -300,9 +328,13 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 	};
 
 	
-	let postNewSavingFor = (newItem) => {
+	let postNewSavingFor = (item) => {
+		item.goal 		= parseFloat(item.goal);
+		item.addAmount = parseFloat(item.addAmount);
+		item.saveAmount = parseFloat(item.saveAmount) + item.addAmount;
+		item.addAmount = 0;
 		return $q((resolve, reject) =>{
-			$http.post(`${FIREBASE_CONFIG.databaseURL}/savingFor.json`, JSON.stringify(newItem))
+			$http.post(`${FIREBASE_CONFIG.databaseURL}/savingFor.json`, JSON.stringify(item))
 				.then((resultz) => {
 					console.log ("post" , resultz);
 					resolve(resultz);
@@ -352,29 +384,29 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 	//************************************
 	//*  Return Functions                *
 	//************************************
-	return {getIncomes:getIncomes
-		  , getSingleIncome:getSingleIncome	
-		  , postNewIncome:postNewIncome
-		  , editIncome:editIncome
-		  , deleteIncome:deleteIncome
+	return {getIncomes:getIncomes,
+		   getSingleIncome:getSingleIncome,	
+		   postNewIncome:postNewIncome,
+		   editIncome:editIncome,
+		   deleteIncome:deleteIncome,
 
-		  , getFixExpenses:getFixExpenses 
-		  , getSingleFixExpense:getSingleFixExpense
-		  , editFixExpense:editFixExpense
-		  , postNewFixExpense:postNewFixExpense
-		  , deleteFixExpense:deleteFixExpense
+		   getFixExpenses:getFixExpenses, 
+		   getSingleFixExpense:getSingleFixExpense,
+		   editFixExpense:editFixExpense,
+		   postNewFixExpense:postNewFixExpense,
+		   deleteFixExpense:deleteFixExpense,
 		  
-		  , getVaryExpenses:getVaryExpenses
-		  , getSingleVaryExpense:getSingleVaryExpense
-		  , editVaryExpense:editVaryExpense
-		  , postNewVaryExpense:postNewVaryExpense
-		  , deleteVaryExpense:deleteVaryExpense
+		   getVaryExpenses:getVaryExpenses,
+		   getSingleVaryExpense:getSingleVaryExpense,
+		   editVaryExpense:editVaryExpense,
+		   postNewVaryExpense:postNewVaryExpense,
+		   deleteVaryExpense:deleteVaryExpense,
 
-		  , getSavingFor:getSavingFor
-		  , getSingleSavingFor:getSingleSavingFor
-		  , editSavingFor:editSavingFor
-		  , postNewSavingFor:postNewSavingFor
-		  , deleteSavingFor:deleteSavingFor
+		   getSavingFor:getSavingFor,
+		   getSingleSavingFor:getSingleSavingFor,
+		   editSavingFor:editSavingFor,
+		   postNewSavingFor:postNewSavingFor,
+		   deleteSavingFor:deleteSavingFor,
 
-		  , getSaving:getSaving}
+		   getSaving:getSaving};
 });

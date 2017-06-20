@@ -5,8 +5,10 @@
   <tr>
     <th>Title</th>
     <th>Goal</th>
-    <th>Saved Amount</th>
-    <th>Month</th>
+    <th>Total Saved Amount</th>
+    <th>Add Amount</th>
+    <th>Date Added</th>
+    <th>Monitor id</th>
     
   </tr>
   </thead>
@@ -15,7 +17,8 @@
     <td>{{item.title}}</td>
     <td>{{item.goal}}</td>
     <td>{{item.saveAmount}}</td>
-    <td>{{item.month}}</td>
+    <td>{{item.addAmount}}</td>
+    <td>{{item.date | date : "MM/dd/y"}}</td>
     <td>{{item.monitorId}}</td>
     <!-- <td>{{item.date | date : "MM/dd/y"}}</td> -->
     <td>

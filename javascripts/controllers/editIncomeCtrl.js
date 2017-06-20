@@ -4,7 +4,7 @@ app.controller("editIncomeCtrl", function($location, $routeParams, $scope, Fireb
 
 	FirebaseFactory.getSingleIncome($routeParams.id).then((results) => {
 		console.log("getSingleIncome results", results);
-		results.data.date = new Date(results.data.date)
+		results.data.date = new Date(results.data.date);
 		$scope.newTask = results.data;
 	}).catch((error) => {
 		console.log("getSingleIncome", error);

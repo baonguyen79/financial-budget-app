@@ -8,13 +8,32 @@
 
   <div class="form-group">
     <label>Goal</label>
-    <input type="text" class="form-control" placeholder="amount need" ng-model="newTask.goal" ng-required="required"/><label>Saved Amount</label>
+    <input type="text" class="form-control" placeholder="amount need" ng-model="newTask.goal" ng-required="required"/>
+
+    <label>Saved Amount</label>
     <input type="text" class="form-control" placeholder=" " ng-model="newTask.saveAmount"/>
+
+    <label>Add Amount</label>
+    <input type="text" class="form-control" placeholder=" " ng-model="newTask.addAmount"/>
+
     <label>Image URL</label>
-    <input type="text" class="form-control" placeholder="image url" ng-model="newTask.imageUrl" /><<label>For month period</label>
-    <input type="text" class="form-control" placeholder="month" ng-model="newTask.month" /><label>Monitor Id</label>
+    <input type="text" class="form-control" placeholder="image url" ng-model="newTask.imageUrl" />
+    
+    <label>Monitor Id</label>
     <input type="text" class="form-control"  ng-model="newTask.monitorId" placeholder="optional monitor id" />
   </div>
 
-  <button class="btn btn-default" ng-click="addNewSavingFor()">Submit</button>
+   <div class="form-group row">
+    <div class="col-xs-6">
+      <p class="input-group">
+      <input type="date" class="form-control" uib-datepicker-popup ng-model="newTask.date" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="isOpened2 = !isOpened2"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <button class="btn btn-default" ng-click="addNewSavingFor()">Save</button>
 </div>

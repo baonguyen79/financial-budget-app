@@ -2,7 +2,7 @@
   "incomes" : {
     
     "income1" : {
-	  "month": "01",	
+	  "month": 1,	
       "title" : "paycheck",
 	  "date" : "01/01/2017",
 	  "amount" : 3000,
@@ -10,7 +10,7 @@
     },
 	
     "income2" : {
-	  "month": "01",	
+	  "month": 6,	
       "title" : "paycheck",
 	  "date" : "01/01/2017",
 	  "amount" : 1000,
@@ -20,21 +20,23 @@
   },
   "fixExpenses" : {
       "fixExpense1" : {
-	  "month": "01",	
+	  "month": 1,	
 	  "title" : "comcast",
 	  "amount" : 20,
+	  "date" : "01/01/2017",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     },
 	 "fixExpense2" : {
-	  "month": "01",	
+	  "month": 6,	
 	  "title" : "car payment",
 	  "amount" : 30,
+	  "date" : "06/01/2017",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     }
   },
   "varyExpenses" : {
 	 "varyExpense1" : {
-	  "month": "01",	
+	  "month": 1,	
 	  "title" : "food",
 	  "date" : "01/01/2017",
 	  "setAmount": 200,
@@ -43,7 +45,7 @@
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     },
 	 "varyExpense2" : {
-	  "month": "01",	
+	  "month": 6,	
 	  "title" : "fun",
 	  "date" : "01/01/2017",
 	  "setAmount" : 100,
@@ -54,19 +56,21 @@
   },
   "savingFor": {
 	"savingFor1" : {
-	  "month": "01",	
 	  "title" : "vacatiion",
 	  "goal" : 1234,
 	  "saveAmount" : 123,
+	  "addAmount" : 0,  
+	  "date" : "01/01/2017",
 	  "monitorId": "1",
 	  "imageUrl": "https://s3.amazonaws.com/harmony-live/harmonyoftheseas/wp-content/uploads/2016/08/HM-Aerials-June2016-598.jpg",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
 	},
 	"savingFor2" : {
-	  "month": "01",	
 	  "title" : "new car",
 	  "goal" : 1234,
 	  "saveAmount" : 123,
+	   "addAmount" : 0,
+	   "date" : "01/01/2017",
 	   "monitorId": "2",
 	  "imageUrl": "",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
@@ -82,14 +86,6 @@
     "user0" : {
       "uid" : "pLPQeobtWxV9Y2qiN9T3R6BgsKs1",
       "username" : "Ally"
-    },
-    "user1" : {
-      "uid" : "pLPQeobtWxV9Y2qiN9T3R6BgsKs1",
-      "username" : "Billy"
-    },
-    "user2" : {
-      "uid" : "pLPQeobtWxV9Y2qiN9T3R6BgsKs1",
-      "username" : "Charlie"
     }
   }
 }

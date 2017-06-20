@@ -1,3 +1,3 @@
-app.controller("NavCtrl", function() {
-	
+app.controller("NavCtrl", function($scope) {
+	$scope.date = new Date();
 });

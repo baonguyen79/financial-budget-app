@@ -5,7 +5,7 @@ app.factory("gaugeFactory", function(){
         var gauge1 = new RadialGauge({
             renderTo: 'canvas-id',
             width: 300,
-            height: 250,
+            height: 200,
             units: "",
         //title: "",
 
@@ -96,8 +96,8 @@ app.factory("gaugeFactory", function(){
      let drawLinearGauge1 = (valIn) => {
         var LinearGauge1 = new LinearGauge({
             renderTo: 'linearCanvas-id1',
-            width: 80,
-            height: 300,
+            width: 60,
+            height: 200,
             units: "%",
             minValue: 0,
             maxValue: 100,
@@ -142,8 +142,8 @@ app.factory("gaugeFactory", function(){
 
         var LinearGauge2 = new LinearGauge({
             renderTo: 'linearCanvas-id2',
-            width: 80,
-            height: 300,
+            width: 60,
+            height: 200,
             units: "%",
             minValue: 0,
             maxValue: 100,
@@ -188,8 +188,8 @@ app.factory("gaugeFactory", function(){
 
         var LinearGauge3 = new LinearGauge({
             renderTo: 'linearCanvas-id3',
-            width: 80,
-            height: 300,
+            width: 60,
+            height: 200,
             units: "%",
             minValue: 0,
             maxValue: 100,
@@ -236,8 +236,8 @@ app.factory("gaugeFactory", function(){
 
         var LinearGauge4 = new LinearGauge({
             renderTo: 'linearCanvas-id4',
-            width: 80,
-            height: 300,
+            width: 60,
+            height: 200,
             units: "%",
             minValue: 0,
             maxValue: 100,
@@ -284,8 +284,8 @@ app.factory("gaugeFactory", function(){
 
         var LinearGauge5 = new LinearGauge({
             renderTo: 'linearCanvas-id5',
-            width: 80,
-            height: 300,
+            width: 65,
+            height: 200,
             units: "%",
             minValue: 0,
             maxValue: 100,
@@ -334,12 +334,12 @@ app.factory("gaugeFactory", function(){
 	
 	
 
-	return {drawGauge:drawGauge
-          , drawLinearGauge1:drawLinearGauge1
-          , drawLinearGauge2:drawLinearGauge2
-          , drawLinearGauge3:drawLinearGauge3
-          , drawLinearGauge4:drawLinearGauge4
-          , drawLinearGauge5:drawLinearGauge5};
+	return {drawGauge:drawGauge,
+           drawLinearGauge1:drawLinearGauge1,
+           drawLinearGauge2:drawLinearGauge2,
+           drawLinearGauge3:drawLinearGauge3,
+           drawLinearGauge4:drawLinearGauge4,
+           drawLinearGauge5:drawLinearGauge5};
 		  
 
 });

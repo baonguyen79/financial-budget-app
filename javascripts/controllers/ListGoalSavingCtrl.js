@@ -22,14 +22,5 @@ app.controller("ListGoalSavingCtrl", function($rootScope, $scope, $location, Fir
 		});
 	};
 
-
-	$scope.inputChange = (item) => {
-		console.log("inputChange" , item)
-		FirebaseFactory.editSavingFor(item).then(() => {
-		}).catch((error) => {
-			console.log("savingFor inputChange error", error);
-		});
-	};
-
 	
 });

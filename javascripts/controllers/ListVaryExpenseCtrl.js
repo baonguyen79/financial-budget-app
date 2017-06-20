@@ -2,7 +2,7 @@ app.controller("ListVaryExpenseCtrl", function($rootScope, $scope, $location, Fi
 	$scope.items = [];
 
 	let getItems = () => {
-		FirebaseFactory.getVaryExpenses($rootScope.user.uid).then((varyExpenses) => {
+		FirebaseFactory.getVaryExpenses($rootScope.user.uid , $rootScope.month).then((varyExpenses) => {
 			$scope.items = varyExpenses;
 			
 		}).catch((error) => {

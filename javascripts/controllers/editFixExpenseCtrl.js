@@ -3,8 +3,8 @@ app.controller("editFixExpenseCtrl", function($location, $routeParams, $scope, F
 	$scope.heading = "Edit fix Expense Item";
 
 	FirebaseFactory.getSingleFixExpense($routeParams.id).then((results) => {
-		console.log("getSingleFixExpense results", results);
-		results.data.date = new Date(results.data.date)
+		// console.log("getSingleFixExpense results", results);
+		results.data.date = new Date(results.data.date);
 		$scope.newTask = results.data;
 	}).catch((error) => {
 		console.log("getSingleFixExpense error", error);

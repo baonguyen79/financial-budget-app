@@ -2,9 +2,9 @@ app.controller("ListFixExpenseCtrl", function($rootScope, $scope, $location, Fir
 	$scope.items = [];
 
 	let getItems = () => {
-		FirebaseFactory.getFixExpenses($rootScope.user.uid).then((fixExpenses) => {
+		FirebaseFactory.getFixExpenses($rootScope.user.uid, $rootScope.month).then((fixExpenses) => {
 			$scope.items = fixExpenses;
-			console.log("fixExpenses " , fixExpenses);
+			// console.log("fixExpenses " , fixExpenses);
 			
 		}).catch((error) => {
 			console.log("getFixExpenses Error", error);
@@ -23,13 +23,13 @@ app.controller("ListFixExpenseCtrl", function($rootScope, $scope, $location, Fir
 	};
 
 
-	$scope.inputChange = (item) => {
-		console.log("inputChange" , item)
-		FirebaseFactory.editFixExpense(item).then(() => {
-		}).catch((error) => {
-			console.log("fix expense inputChange error", error);
-		});
-	};
+	// $scope.inputChange = (item) => {
+	// 	console.log("inputChange" , item)
+	// 	FirebaseFactory.editFixExpense(item).then(() => {
+	// 	}).catch((error) => {
+	// 		console.log("fix expense inputChange error", error);
+	// 	});
+	// };
 
 	
 });

@@ -4,13 +4,15 @@ app.controller("varyExpenseEditCtrl", function($location, $routeParams, $scope, 
 
 	FirebaseFactory.getSingleVaryExpense($routeParams.id).then((results) => {
 		console.log("getSingleVaryExpense results", results);
-		results.data.date = new Date(results.data.date)
+		results.data.date = new Date(results.data.date);
+
 		$scope.newTask = results.data;
 	}).catch((error) => {
 		console.log("getSingleVaryExpense", error);
 	});
 
 	$scope.addNewVaryExpense = () => {
+		// $scope.newTask.spendAmount = parseFloat($scope.newTask.spendAmount);
 		FirebaseFactory.editVaryExpense($scope.newTask).then(() => {
 			$location.url("/start");
 		}).catch((error) => {

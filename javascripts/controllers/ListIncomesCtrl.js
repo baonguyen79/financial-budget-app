@@ -2,7 +2,7 @@ app.controller("ListIncomesCtrl", function($rootScope, $scope, $location, Fireba
 	$scope.items = [];
 
 	let getItems = () => {
-		FirebaseFactory.getIncomes($rootScope.user.uid).then((items) => {
+		FirebaseFactory.getIncomes($rootScope.user.uid , $rootScope.month).then((items) => {
 			// items.date = new Date(items.date)
 			$scope.items = items;
 			console.log("List Incomes " , items);

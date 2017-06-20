@@ -9,6 +9,10 @@
   <div class="form-group">
     <label>Set Amount</label>
     <input type="text" class="form-control" placeholder="amount limit" ng-model="newTask.setAmount" ng-required="required"/>
+
+    <label>Spend Amount</label>
+    <input type="text" class="form-control" placeholder="spend amount" ng-model="newTask.spendAmount" ng-required="required"/>
+
     <label>For month period</label>
     <input type="text" class="form-control" placeholder="month" ng-model="newTask.month" /><label>Monitor Id</label>
     <input type="text" class="form-control"  ng-model="newTask.monitorId" placeholder="optional monitor id" />
@@ -24,5 +28,5 @@
   </p>
  
 
-  <button class="btn btn-default" ng-click="addNewVaryExpense()">Submit</button>
+  <button class="btn btn-default" ng-click="addNewVaryExpense()">Save</button>
 </div>

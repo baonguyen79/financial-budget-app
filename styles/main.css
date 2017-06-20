@@ -1,13 +1,51 @@
+body {
+  background: url("/Images/backgroud1.jpg"); }
+
+.navbar {
+  border: 2px solid #ccc; }
+
+.panel {
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #bbb;
+  border-top: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px grey; }
+
+#picture > img {
+  height: 20%;
+  width: auto;
+  padding: 1em;
+  -webkit-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+  border: 1px solid grey;
+  box-shadow: 0 0 20px 10px grey; }
+
 .thumbnail {
-  height: 100%
-  background: yellow;
-}
+  height: 100%;
+  width: 100px;
+  background: DimGray;
+  color: white;
+  text-shadow: 2px 2px 4px #000000; }
+
+#currMonth {
+  position: absolute;
+  top: 60%;
+  left: 25%; }
+
+.shadow {
+  background: #000;
+  border-radius: 12px 12px 4px 4px;
+  box-shadow: 0 0 20px 10px #000;
+  height: 12px;
+  margin: 30px auto;
+  opacity: 0.2;
+  width: 270px; }
 
 .login {
   background: #eceeee;
   border: 1px solid #42464b;
   border-radius: 6px;
-  /*height: 257px;
+  height: 257px;
   margin: 20px auto 0;
-  width: 298px;*/
-}
+  width: 298px; }

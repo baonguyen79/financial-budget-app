@@ -3,31 +3,37 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 	$scope.totIncome = 0;
 	$scope.totFixExpenses = 0;
 
-	// let uid = "pLPQeobtWxV9Y2qiN9T3R6BgsKs1";
 	let perValue = 0;
 	let allVaryExpenses = {};
-	let allFixExpenses = {};
-	let allSavingFor = {};
+	let allSavingFor    = {};
+	let allFixExpenses = 0;
 	let allSaving  = 0;
 	let totAllSaving = 0;
 	let allIncomes = 0;
 	let avalFund = 0;
 	let allExpenses = 0;
-	let monitorArray = []
+	let monitorArray = [];
 	let gaugeVal1 = 0;
 	let gaugeVal2 = 0;
 	let gaugeVal3 = 0;
 	let gaugeVal4 = 0;
 	let gaugeVal5 = 0;
+	let jsGauge1Value = 0;
+	let jsGauge2Value = 0;
+	let jsGauge3Vvalue = 0;
 
 	let getAll = () => {
+		
+		$rootScope.month = ((new Date()).getMonth()) + 1;
+		$scope.month = $rootScope.month;
+		console.log("rootScope month" , $rootScope.month);
 		// FirebaseFactory.getIncomes($rootScope.user.uid).then((incomes) => {
-		console.log("uid" , $rootScope.user.uid);	
-		$q.all([ FirebaseFactory.getFixExpenses($rootScope.user.uid)
-					, FirebaseFactory.getVaryExpenses($rootScope.user.uid)
-					, FirebaseFactory.getSavingFor($rootScope.user.uid)
-					, FirebaseFactory.getSaving($rootScope.user.uid)
-					, FirebaseFactory.getIncomes($rootScope.user.uid)])  
+		// console.log("uid" , $rootScope.user.uid);	
+		$q.all([ FirebaseFactory.getFixExpenses($rootScope.user.uid, $rootScope.month),
+					 FirebaseFactory.getVaryExpenses($rootScope.user.uid, $rootScope.month),
+					 FirebaseFactory.getSavingFor($rootScope.user.uid),
+					 FirebaseFactory.getSaving($rootScope.user.uid),
+					 FirebaseFactory.getIncomes($rootScope.user.uid, $rootScope.month)])  
  			 .then(function(results) {
  			 	console.log ("promise all" , results);
 
@@ -90,7 +96,7 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 
 				});
 
-				
+				$scope.month = '06';
 				// gaugeFactory.drawLinearGauge2(allSavingFor.percent);
 				gaugeFactory.drawLinearGauge1(gaugeVal1);
 				gaugeFactory.drawLinearGauge2(gaugeVal2);
@@ -99,14 +105,24 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 				gaugeFactory.drawLinearGauge5(gaugeVal5);
 
 				allExpenses =  allVaryExpenses.setAmount + allFixExpenses;
-				$scope.avalFund = allIncomes - allExpenses;
-				console.log("allIncomes" , allIncomes , "allExpenses" , allExpenses);
+				$scope.avalFund = allIncomes - (allExpenses + allSavingFor.addAmount);
+				console.log("allIncomes" , allIncomes , "allExpenses" , allExpenses , " save" , allSavingFor.addAmount);
 
 				//* Fund available gauge  *//
 				gaugeFactory.drawGauge(100 - caculationFactory.calPercent(allIncomes , allExpenses));
 				//*  Fixed Expenses vs Income  Gauge *//
+
+				
+				jsGauge1Value = caculationFactory.calPercent(allIncomes , allFixExpenses );
+				jsGauge2Value = caculationFactory.calPercent( allIncomes , allVaryExpenses.setAmount );
+				jsGauge3Value = caculationFactory.calPercent( allSavingFor.goal , allSavingFor.saveAmount );
+				
+				if (isNaN(jsGauge1Value)) {jsGauge1Value = 0};
+				if (isNaN(jsGauge2Value)) {jsGauge2Value = 0};
+				if (isNaN(jsGauge3Value)) {jsGauge3Value = 0};
+
 				$('.js-gauge--1').kumaGauge({
-				value: caculationFactory.calPercent(allIncomes , allFixExpenses ),
+				value: jsGauge1Value,
 				fill : '0-#1cb42f:0-#fdbe37:50-#fa4133:100',
 				showNeedle: false,
 				gaugeWidth: 25,
@@ -117,7 +133,7 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 				});
 				//*  Varirable Expenses  vs  Incomes *//
 				$('.js-gauge--2').kumaGauge({
-					value: caculationFactory.calPercent( allIncomes , allVaryExpenses.setAmount ),
+					value: jsGauge2Value,
 					fill : '0-#1cb42f:0-#fdbe37:50-#fa4133:100',
 					showNeedle: false,
 					gaugeWidth: 25,
@@ -128,7 +144,7 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 				});
 				//*  Saving For   *//
 				$('.js-gauge--3').kumaGauge({
-					value: caculationFactory.calPercent( allSavingFor.goal , allSavingFor.saveAmount ),
+					value: jsGauge3Value,
 					fill : '0-#fa4133:0-#fdbe37:50-#1cb42f:100',
 					showNeedle: false,
 					gaugeWidth: 25,
@@ -137,7 +153,7 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 					// background: 'lavender'
 				});
 
-//
+//				
 // 				var options = {
 //   tooltips: {
 //     enabled: false
@@ -154,9 +170,9 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 
 
 
-
+			
  			 })
- 			 .catch((err) => {console.log("promise All error" , err) });
+ 			 .catch((err) => {console.log("promise All error" , err);});
 		
  			 $scope.totIncomes = allIncomes;
  			 $scope.totVaryExpenses = allVaryExpenses;

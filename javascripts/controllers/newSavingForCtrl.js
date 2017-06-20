@@ -1,12 +1,15 @@
 app.controller("newSavingForCtrl", function($rootScope, $location, $scope, uibDateParser, FirebaseFactory) {
 	$scope.heading = "Add New Goal Saving for";
 	$scope.newTask = {monitorId: " ",
+					  saveAmount: 0,
+					  addAmount: 0,
+					  date: new Date(),	
 					  imageUrl: " "};
 
 	$scope.addNewSavingFor = () => {
-		$scope.newTask.savedAmount = 0;
+		// $scope.newTask.savedAmount = 0;
 		$scope.newTask.uid = $rootScope.user.uid;
-  		$scope.newTask.goal = parseFloat($scope.newTask.goal);
+  		// $scope.newTask.goal = parseFloat($scope.newTask.goal);
 
 		FirebaseFactory.postNewSavingFor($scope.newTask).then(() => {
 			$scope.newTask = {};

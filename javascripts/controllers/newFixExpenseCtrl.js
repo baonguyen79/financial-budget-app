@@ -1,11 +1,12 @@
 app.controller("newFixExpenseCtrl", function($rootScope, $location, $scope, uibDateParser, FirebaseFactory) {
 	$scope.heading = "Add New Fix Expense";
-	$scope.newTask = {date: new Date()};
+	$scope.newTask = {date: new Date(),
+					  month: $rootScope.month};
+
 	$scope.addNewFixExpense = () => {
-		$scope.newTask.isMonitor = false;
 		$scope.newTask.uid = $rootScope.user.uid;
-  		$scope.newTask.amount = parseFloat($scope.newTask.amount);
-		FirebaseFactory.postNewVaryExpense($scope.newTask).then(() => {
+  		// $scope.newTask.amount = parseFloat($scope.newTask.amount);
+		FirebaseFactory.postNewFixExpense($scope.newTask).then(() => {
 			$scope.newTask = {};
 			$location.url("/start");
 		}).catch((error) => {
