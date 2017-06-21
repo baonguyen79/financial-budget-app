@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">My Monthly Budget - {{date | date : "MM/dd/y"}}</a>
+      <a class="navbar-brand" href="#">My Monthly Budget for - {{monthName}} / {{year}}</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -46,7 +46,9 @@
             <li> <a ng-href="#!/start/list-goalSaving">List Saving</a> </li>
             <li> <a ng-href="#!/goal-saving/new-saving-for">Add New Saving</a> </li>
           </ul>
-        </li>      
+        </li>   
+
+        <li> <a ng-href="#!/start/updateSurplus">Surplus</a> </li>
 
         <li><a ng-href="#!/logout">Logout</a></li>
       </ul>

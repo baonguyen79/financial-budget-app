@@ -24,11 +24,9 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 
 	let getAll = () => {
 		
-		$rootScope.month = ((new Date()).getMonth()) + 1;
+		// $rootScope.month = ((new Date()).getMonth()) + 1;
 		$scope.month = $rootScope.month;
 		console.log("rootScope month" , $rootScope.month);
-		// FirebaseFactory.getIncomes($rootScope.user.uid).then((incomes) => {
-		// console.log("uid" , $rootScope.user.uid);	
 		$q.all([ FirebaseFactory.getFixExpenses($rootScope.user.uid, $rootScope.month),
 					 FirebaseFactory.getVaryExpenses($rootScope.user.uid, $rootScope.month),
 					 FirebaseFactory.getSavingFor($rootScope.user.uid),
@@ -58,46 +56,76 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 					if (item.monitorId === "1") {
 						$scope.title1 = item.title;
 						$scope.setAmount1 = item.setAmount;
-						$scope.spendAmount1 = item.spendAmount;
+						$scope.currAmount1 = item.spendAmount;
 						gaugeVal1 = gaugeFactory.drawLinearGauge1(caculationFactory.calPercent(item.setAmount , item.spendAmount));
 					}	
 					if (item.monitorId === "2") {
 						$scope.title2 = item.title;
 						$scope.setAmount2 = item.setAmount;
-						$scope.spendAmount2 = item.spendAmount;
+						$scope.currAmount2 = item.spendAmount;
 						gaugeVal2 = gaugeFactory.drawLinearGauge2(caculationFactory.calPercent(item.setAmount , item.spendAmount));
 					}
 					if (item.monitorId === "3") {
 						$scope.title3 = item.title;
 						$scope.setAmount3 = item.setAmount;
-						$scope.spendAmount3 = item.spendAmount;
+						$scope.currAmount3 = item.spendAmount;
 						gaugeVal3 = gaugeFactory.drawLinearGauge3(caculationFactory.calPercent(item.setAmount , item.spendAmount));
+					}
+					if (item.monitorId === "4") {
+						$scope.title4 = item.title;
+						$scope.setAmount4 = item.setAmount;
+						$scope.currAmount4 = item.spendAmount;
+						gaugeVal4 = gaugeFactory.drawLinearGauge4(caculationFactory.calPercent(item.setAmount , item.spendAmount));
+					}
+					if (item.monitorId === "5") {
+						$scope.title5 = item.title;
+						$scope.setAmount5 = item.setAmount;
+						$scope.currAmount5 = item.spendAmount;
+						gaugeVal3 = gaugeFactory.drawLinearGauge5(caculationFactory.calPercent(item.setAmount , item.spendAmount));
 					}
 
 				});
 
 				//* Setup monitor for savingFor  *// 
 				results[2].forEach ((item) => {
+					if (item.monitorId === "1") {
+						$scope.title1 = item.title;
+						$scope.setAmount1 = item.goal;
+						$scope.currAmount1 = item.saveAmount;
+						$scope.imageUrl1 = item.imageUrl;
+						gaugeVal1 = gaugeFactory.drawLinearGauge1(caculationFactory.calPercent(item.goal , item.saveAmount));
+					}
+					if (item.monitorId === "2") {
+						$scope.title2 = item.title;
+						$scope.setAmount2 = item.goal;
+						$scope.currAmount2 = item.saveAmount;
+						$scope.imageUrl2 = item.imageUrl;
+						gaugeVal2 = gaugeFactory.drawLinearGauge2(caculationFactory.calPercent(item.goal , item.saveAmount));
+					}
+					if (item.monitorId === "3") {
+						$scope.title3 = item.title;
+						$scope.setAmount3 = item.goal;
+						$scope.currAmount3 = item.saveAmount;
+						$scope.imageUrl3 = item.imageUrl;
+						gaugeVal3 = gaugeFactory.drawLinearGauge3(caculationFactory.calPercent(item.goal , item.saveAmount));
+					}
 					if (item.monitorId === "4") {
 						$scope.title4 = item.title;
-						$scope.goalAmount4 = item.goal;
-						$scope.saveAmount4 = item.saveAmount;
+						$scope.setAmount4 = item.goal;
+						$scope.currAmount4 = item.saveAmount;
 						$scope.imageUrl4 = item.imageUrl;
 						gaugeVal4 = gaugeFactory.drawLinearGauge4(caculationFactory.calPercent(item.goal , item.saveAmount));
 					}
 					if (item.monitorId === "5") {
 						$scope.title5 = item.title;
-						$scope.goalAmount5 = item.goal;
-						$scope.saveAmount5 = item.saveAmount;
+						$scope.setAmount5 = item.goal;
+						$scope.currAmount5 = item.saveAmount;
 						$scope.imageUrl5 = item.imageUrl;
 						gaugeVal5 = gaugeFactory.drawLinearGauge5(caculationFactory.calPercent(item.goal , item.saveAmount));
 					}		
-					
 
 				});
 
-				$scope.month = '06';
-				// gaugeFactory.drawLinearGauge2(allSavingFor.percent);
 				gaugeFactory.drawLinearGauge1(gaugeVal1);
 				gaugeFactory.drawLinearGauge2(gaugeVal2);
 				gaugeFactory.drawLinearGauge3(gaugeVal3);
@@ -106,6 +134,9 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 
 				allExpenses =  allVaryExpenses.setAmount + allFixExpenses;
 				$scope.avalFund = allIncomes - (allExpenses + allSavingFor.addAmount);
+
+				$rootScope.currSurplusAmount = $scope.avalFund;
+
 				console.log("allIncomes" , allIncomes , "allExpenses" , allExpenses , " save" , allSavingFor.addAmount);
 
 				//* Fund available gauge  *//

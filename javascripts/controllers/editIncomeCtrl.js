@@ -3,7 +3,7 @@ app.controller("editIncomeCtrl", function($location, $routeParams, $scope, Fireb
 	$scope.heading = "Edit Income Item";
 
 	FirebaseFactory.getSingleIncome($routeParams.id).then((results) => {
-		console.log("getSingleIncome results", results);
+		// console.log("getSingleIncome results", results);
 		results.data.date = new Date(results.data.date);
 		$scope.newTask = results.data;
 	}).catch((error) => {

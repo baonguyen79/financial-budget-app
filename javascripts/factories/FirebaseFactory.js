@@ -364,7 +364,7 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 		return $q((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/savings.json?orderBy="uid"&equalTo="${userId}"`)
 				.then((fbItems) => {
-					// console.log("+++ saving" , fbItems.data);
+					console.log("+++ firebase saving" , fbItems.data);
 					let itemCollection = fbItems.data;
           if(itemCollection !== null ){
 	          Object.keys(itemCollection).forEach((key) => {
@@ -375,6 +375,23 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
           resolve(Allsaving);
 				})
 				.catch((error) => {
+					reject(error);
+				});
+		});
+	};
+
+	let updateSaving = (item) => {
+		item.amount 		= parseFloat(item.amount);
+		return $q((resolve, reject) => {
+			$http.put(`${FIREBASE_CONFIG.databaseURL}/savings/${item.id}.json`, 
+				JSON.stringify({
+					title:       item.title,
+					amount:      item.amount,
+					uid:         item.uid
+				})
+				).then((resultz) => {
+					resolve(resultz);
+				}).catch((error) => {
 					reject(error);
 				});
 		});
@@ -408,5 +425,6 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 		   postNewSavingFor:postNewSavingFor,
 		   deleteSavingFor:deleteSavingFor,
 
-		   getSaving:getSaving};
+		   getSaving:getSaving,
+		   updateSaving:updateSaving};
 });

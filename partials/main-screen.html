@@ -12,7 +12,13 @@
      <canvas id="linearCanvas-id1"></canvas>
      <h4>{{title1}}</h4>
      <p>Set: ${{setAmount1}}</p> 
-     <p>Spend: ${{spendAmount1}}</p> 
+     <p>Current: ${{currAmount1}}</p> 
+      <!-- <img ng-src="{{imageUrl1}}"> -->
+
+      <a href="{{imageUrl1}}" target="_blank">
+        <img class="img-responsive" ng-src="{{imageUrl1}}" alt="{{title1}}">
+      </a>
+
    </div>
  </div>
 
@@ -21,7 +27,10 @@
      <canvas id="linearCanvas-id2"></canvas>
      <h4>{{title2}}</h4>
      <p>Set: ${{setAmount2}}</p> 
-     <p>Spend: ${{spendAmount2}}</p> 
+     <p>Current: ${{currAmount2}}</p> 
+     <a href="{{imageUrl2}}" target="_blank">
+        <img class="img-responsive" ng-src="{{imageUrl2}}" alt="{{title2}}">
+     </a>
     </div>
   </div>
 
@@ -30,7 +39,10 @@
      <canvas id="linearCanvas-id3"></canvas>
      <h4>{{title3}}</h4>
      <p>Set: ${{setAmount3}}</p> 
-     <p>Spend: ${{spendAmount3}}</p> 
+     <p>Current: ${{currAmount3}}</p> 
+     <a href="{{imageUrl3}}" target="_blank">
+        <img class="img-responsive" ng-src="{{imageUrl3}}" alt="{{title3}}">
+     </a>
     </div>
   </div>
  
@@ -42,10 +54,10 @@
     <div class="thumbnail">
       <canvas id="linearCanvas-id4"></canvas>
       <h4>{{title4}}</h4>
-      <p>Goal: ${{goalAmount4}}</p> 
-      <p>Saved: ${{saveAmount4}}</p> 
-      <a href="{{imageUrl4}}">
-      <img ng-src="{{imageUrl4}}">
+      <p>Set: ${{setAmount4}}</p> 
+      <p>Current: ${{currAmount4}}</p> 
+      <a href="{{imageUrl4}}" target="_blank">
+        <img class="img-responsive" ng-src="{{imageUrl4}}" alt="{{title4}}">
       </a>
     </div>
   </div>
@@ -54,13 +66,17 @@
     <div class="thumbnail">
       <canvas id="linearCanvas-id5"></canvas>
       <h4>{{title5}}</h4>
-      <p>Goal: ${{goalAmount5}}</p> 
-      <p>Saved: ${{saveAmount5}}</p> 
-       <a href="{{imageUrl5}}">
-      <img ng-src="{{imageUrl5}}">
+      <p>Set: ${{setAmount5}}</p> 
+      <p>Current: ${{currAmount5}}</p> 
+      <a href="{{imageUrl5}}" target="_blank">
+        <img class="img-responsive" ng-src="{{imageUrl5}}" alt="{{title5}}">
       </a>
     </div>
   </div>
+
+  <!-- <div class="col-md-1" id="picture">
+      <img src="/Images/DaveRamseyWithMoney.jpg">
+  </div> -->
 
  <!--  <div class="col-md-1" id="picture">
       <img src="/Images/DaveRamseyWithMoney.jpg">
@@ -117,7 +133,7 @@
 
   <div class="col-sm-2">
    <div class="panel panel-default">
-    <img src="./Images/money-coin-deposit-of-save-money.jpg" alt="..." width="195" height="220">
+    <img src="./Images/money-coin-deposit-of-save-money.jpg" alt="..." width="80%" height="100%">
     <h3>Surplus</h3> 
     <h5>${{totSaving}}</h5> 
   </div>    

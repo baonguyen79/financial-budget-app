@@ -1,0 +1,32 @@
+<h3>{{heading}}</h3>
+<div>
+  <div class="form-group row">
+
+  <div class="form-group row">
+    <div class="col-xs-6">
+      <label>Total amount in saving</label>
+      <input type="text" class="form-control" placeholder="amount" ng-model="newTask.amount" />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-xs-6">
+      <label>Available funds minus expenses</label>
+      <input type="text" class="form-control" ng-model="currSurplusAmount"/>
+    </div>
+
+    <div class="col-xs-3"> 
+      <div ng-show="isAdd">
+       <strong>Yay! A surplus!! , click + to add to saving</strong>
+       <button  class="pull-right" ng-click="addToSaving(newTask)">
+       <i class="fa fa-plus" aria-hidden="true"></i></button>
+       </div>
+       <div ng-show="isSubtract">
+       <strong>Think twice! You really want to take from saving! Sure (click -)</strong>
+       <button  class="pull-right" ng-click="subtractSaving(newTask)">
+       <i class="fa fa-minus" aria-hidden="true"></i></button>
+      </div> 
+    </div>
+  </div>
+
+ 

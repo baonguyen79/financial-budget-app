@@ -115,8 +115,14 @@ app.config(function($routeProvider) {
    controller: 'newSavingForCtrl',
    resolve : {isAuth}
  })
+  //Surplus//
+  .when('/start/updateSurplus', {
+   templateUrl: 'partials/surplus-Screen.html',
+   controller: 'updateSurplusCtrl',
+   resolve : {isAuth}
+ })
 
-  //Log out
+  //Log out 
   .when('/logout', {
    templateUrl: 'partials/auth.html',
    controller: 'AuthCtrl',

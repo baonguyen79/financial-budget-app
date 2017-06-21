@@ -3,8 +3,8 @@
   <div class="form-group row">
 
     <div class="col-xs-6">
-      <label>Income Type</label>
-      <input id="title" type="text" class="form-control col-10" placeholder="type of expense" ng-model="newTask.title" />
+      <label>Source of Income</label>
+      <input id="title" type="text" class="form-control col-10" placeholder="source of income" ng-model="newTask.title" />
     </div>
   </div>
 
@@ -32,6 +32,8 @@
       </p>
     </div>
   </div>
+
+  <div ng-show="isShow" class="alert alert-success"><strong>Income Saved</div>
 
   <div>
     <button class="btn btn-default" ng-click="addNewIncome()">Save</button>
