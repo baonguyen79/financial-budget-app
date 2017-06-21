@@ -76,7 +76,7 @@ app.config(function($routeProvider) {
     controller: 'editFixExpenseCtrl',
     resolve : {isAuth}
   })
-  .when('/fixExpense/new', {
+  .when('/fixExpense/new', { 
    templateUrl: 'partials/fix-expense.html',
    controller: 'newFixExpenseCtrl',
    resolve : {isAuth}

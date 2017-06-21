@@ -15,10 +15,9 @@ app.controller("newIncomeCtrl", function($rootScope, $location, $scope, uibDateP
 					  month: $rootScope.month};
 			
 			$scope.isShow = true;		
-			// $scope.message = "Income saved ";
 			$location.url("/income/new");
 		}).catch((error) => {
 			console.log("addNewIncome error", error);
 		});
 	};
-});
+}); 

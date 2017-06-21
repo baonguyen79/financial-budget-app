@@ -12,10 +12,22 @@ app.controller("newSavingForCtrl", function($rootScope, $location, $scope, uibDa
   		// $scope.newTask.goal = parseFloat($scope.newTask.goal);
 
 		FirebaseFactory.postNewSavingFor($scope.newTask).then(() => {
-			$scope.newTask = {};
-			$location.url("/start");
+			// $scope.newTask = {};
+			// $location.url("/start");
+
+			$scope.newTask = {date: new Date(),
+					  title: " ",
+					  addAmount: 0,	
+					  saveAmount: 0,
+					  goal: 0,
+					  monitorId: " ",
+					  imageUrl: " "};
+			
+			$scope.isShow = true;		
+			$location.url("/goal-saving/new-saving-for");
+
 		}).catch((error) => {
 			console.log("addNewSavingFor error", error);
 		});
-	};
+	}; 
 });
