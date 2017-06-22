@@ -2,6 +2,7 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 
 	$scope.totIncome = 0;
 	$scope.totFixExpenses = 0;
+	$scope.alertColor = {};
 
 	let perValue = 0;
 	let allVaryExpenses = {};
@@ -137,6 +138,17 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 
 				$rootScope.currSurplusAmount = $scope.avalFund;
 
+				// if (!(parseFloat($scope.avalFund) > 0) && (allIncomes > 0))
+				if (!(parseFloat($scope.avalFund) > 0))
+				{
+					if (allIncomes > 0)
+					{
+					$scope.alertColor.color = "red";
+					 // let amt =  parseFloat($scope.avalFund);
+					 // alert("Available fund is negative!" , amt );
+					}
+				}
+
 				console.log("allIncomes" , allIncomes , "allExpenses" , allExpenses , " save" , allSavingFor.addAmount);
 
 				//* Fund available gauge  *//
@@ -157,7 +169,7 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 				fill : '0-#1cb42f:0-#fdbe37:50-#fa4133:100',
 				showNeedle: false,
 				gaugeWidth: 25,
-				radius: 65,
+				radius: 47,
 				animationSpeed : 1500
 				// background: 'lavender'
 
@@ -168,7 +180,7 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 					fill : '0-#1cb42f:0-#fdbe37:50-#fa4133:100',
 					showNeedle: false,
 					gaugeWidth: 25,
-					radius: 65,
+					radius: 47,
 					animationSpeed : 1500
 					// background: 'lavender'
 
@@ -179,7 +191,7 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 					fill : '0-#fa4133:0-#fdbe37:50-#1cb42f:100',
 					showNeedle: false,
 					gaugeWidth: 25,
-					radius: 65,
+					radius: 47,
 					animationSpeed : 1500
 					// background: 'lavender'
 				});
