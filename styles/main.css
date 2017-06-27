@@ -1,5 +1,8 @@
 body {
-  background: url("/Images/backgroud1.jpg"); }
+  background: url("/Images/ice-background-2577.jpg");
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .navbar {
   border: 2px solid #ccc; }
@@ -44,6 +47,34 @@ body {
   border: 1px solid black;
   color: black;
   text-shadow: 0px 0px 0px #000000; }
+
+table {
+  width: 400px;
+  border: 1px solid #42464b;
+  border-collapse: collapse;
+  margin-bottom: 1em; }
+  table th, table td {
+    border-bottom: 1px solid #ccc; }
+  table thead th,
+  table tbody td,
+  table tfoot {
+    text-align: center; }
+  table thead {
+    color: white;
+    background: #0cf; }
+    table thead th {
+      padding: 1em; }
+  table .total {
+    color: white;
+    background-color: gray; }
+  table .btnAn:hover {
+    background-color: beige;
+    color: #403E10;
+    font-weight: bold;
+    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+    transform: translate3d(6px, -6px, 0); }
+  table tr:nth-child(even) {
+    background-color: lightgray; }
 
 .msgFont {
   font-family: 'Pacifico', cursive; }

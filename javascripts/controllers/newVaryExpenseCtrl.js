@@ -4,6 +4,7 @@ app.controller("newVaryExpenseCtrl", function($rootScope, $location, $scope, uib
 					  spendAmount: 0,
 					  month: $rootScope.month,	
 					  monitorId: " "};
+	$scope.monitorIdAval  = $rootScope.MonitorIdAval;					  
 
 	$scope.addNewVaryExpense = () => {
 		// $scope.newTask.spendAmount = 0;
@@ -11,8 +12,9 @@ app.controller("newVaryExpenseCtrl", function($rootScope, $location, $scope, uib
 		$scope.newTask.uid = $rootScope.user.uid;
   		// $scope.newTask.setAmount = parseFloat($scope.newTask.setAmount);
 
-  		console.log("new varyExpense" , $scope.newTask);
+  		console.log("new varyExpense" , $scope.newTask , " " , $rootScope.usedMonitorId);
 		FirebaseFactory.postNewVaryExpense($scope.newTask).then(() => {
+			console.log ("newVryExpenseCtrl" , $scope.newTask );
 			// $scope.newTask = {};
 			// $location.url("/start");
 

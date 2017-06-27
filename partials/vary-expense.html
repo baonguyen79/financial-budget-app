@@ -1,23 +1,39 @@
-<h3>{{heading}}</h3>
-<div>
-  <div class="form-group">
+<h3>{{heading}}</h3> 
+<!-- <div> -->
+  <div class="form-group row">
+  <div class="col-xs-6">
     <label>Expense Type</label>
     <input id="title" type="text" class="form-control col-10" placeholder="type of expense" ng-model="newTask.title" ng-required="required" />
   </div>
-
-
-  <div class="form-group">
-    <label>Set Amount</label>
-    <input type="text" class="form-control" placeholder="amount limit" ng-model="newTask.setAmount" ng-required="required"/>
-
-    <label>Spend Amount</label>
-    <input type="text" class="form-control" placeholder="spend amount" ng-model="newTask.spendAmount" ng-required="required"/>
-
-    <label>For month period</label>
-    <input type="text" class="form-control" placeholder="month" ng-model="newTask.month" /><label>Monitor Id</label>
-    <input type="text" class="form-control"  ng-model="newTask.monitorId" placeholder="optional monitor id" />
   </div>
 
+
+  <div class="form-group row">
+  <div class="col-xs-6">
+    <label>Set Amount</label>
+    <input type="text" class="form-control" placeholder="amount limit" ng-model="newTask.setAmount" ng-required="required"/>
+    </div>
+    </div>
+
+    <div class="form-group row">
+  <div class="col-xs-6">
+    <label>Spend Amount</label>
+    <input type="text" class="form-control" placeholder="spend amount" ng-model="newTask.spendAmount" ng-required="required"/>
+    </div>
+    </div>
+
+<div class="form-group row">
+  <div class="col-xs-6">
+    <label>For month period</label>
+    <input type="text" class="form-control" placeholder="month" ng-model="newTask.month" /><label>Monitor Id</label>
+    <select ng-model="newTask.monitorId" ng-options="item for item in monitorIdAval">
+     </select>
+    <!-- <input type="text" class="form-control"  ng-model="newTask.monitorId" placeholder="optional monitor id" /> -->
+  </div>
+  </div>
+
+<div class="form-group row">
+  <div class="col-xs-6">
   <p class="input-group">
     <input type="date" class="form-control" uib-datepicker-popup ng-model="newTask.date" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
 
@@ -26,8 +42,10 @@
     </span>
 
   </p>
+  </div>
+  </div>
  
   <div ng-show="isShow" class="alert alert-success"><strong>Expense Saved</div>
   
   <button class="btn btn-default" ng-click="addNewVaryExpense()">Save</button>
-</div>
+<!-- </div> -->

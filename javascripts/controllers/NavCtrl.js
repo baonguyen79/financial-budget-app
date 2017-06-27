@@ -1,21 +1,32 @@
-app.controller("NavCtrl", function($scope, $rootScope) {
+app.controller("NavCtrl", function($scope, $rootScope, $location, $route) {
 	let currDate = new Date();
-	let month = new Array();
-	    month[0] = "January";
-	    month[1] = "February";
-	    month[2] = "March";
-	    month[3] = "April";
-	    month[4] = "May";
-	    month[5] = "June";
-	    month[6] = "July";
-	    month[7] = "August";
-	    month[8] = "September";
-	    month[9] = "October";
-	    month[10] = "November";
-	    month[11] = "December";
+	$scope.monthName = [
+	     "January",
+	     "February",
+	     "March",
+	     "April",
+	     "May",
+	     "June",
+	     "July",
+	     "August",
+	     "September",
+	     "October",
+	     "November",
+	      "December"];
 
 	$rootScope.month = currDate.getMonth() + 1;
-	$scope.month = $rootScope.month;
-	$scope.year = currDate.getFullYear();
-    $scope.monthName = month[$scope.month];
+	$scope.selectMonth = $scope.monthName [$rootScope.month];
+    	// console.log ("root before" , $rootScope.month);
+	
+    $scope.update = () => {
+		let n =  $scope.selectMonth;
+	    $rootScope.month = ($scope.monthName.indexOf(n)) + 1;
+	console.log("NavCtrl month" , $scope.selectMonth , " root ", $rootScope.month , "n: " , n);  
+
+		$scope.year = currDate.getFullYear();
+		$route.reload();
+		// $location.url("/start");   
+
+	};
+
 });

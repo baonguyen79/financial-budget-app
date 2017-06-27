@@ -2,22 +2,35 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Title</th>
-    <th>amount</th>
-    <th>date</th>
-    
+    <th>Income TYpe</th>
+    <th>Amount</th>
+    <th>Date</th>
+    <th></th>
+
   </tr>
   </thead>
+
   <tbody>
   <tr ng-repeat="item in items">
     <td>{{item.title}}</td>
     <td>{{item.amount}}</td>
     <td>{{item.date | date : "MM/dd/y"}}</td>
-    <td>
-    <button class="pull-right"><a ng-href="#!/income/edit/{{item.id}}">Edit</a><i class="fa fa-pencil" aria-hidden="true"></i></button>
+    <td class="btnAn">
+       <button class="pull-right"><a ng-href="#!/income/edit/{{item.id}}">Edit</a><i class="fa fa-pencil" aria-hidden="true"></i></button>
+
        <button class="pull-right" ng-click="deleteItem(item.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
     </td>
   </tr>
   </tbody>
+
+  <tfoot class="total">
+    <tr>
+      <td>Total</td>
+      <td>{{sumAmount}}</td>
+      <td></td>
+      <td></td>
+
+    </tr>
+  </tfoot>
 </table>
 
