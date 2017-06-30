@@ -1,9 +1,11 @@
-app.controller("editGoalSavingCtrl", function($location, $routeParams, $scope, FirebaseFactory) {
+app.controller("editGoalSavingCtrl", function($location, $routeParams, $scope, $rootScope, FirebaseFactory) {
 	$scope.newTask = {};
+	$scope.monitorIdAval  = $rootScope.MonitorIdAval;	
 	$scope.heading = "Edit savingFor Item";
 
 	FirebaseFactory.getSingleSavingFor($routeParams.id).then((results) => {
-		results.data.date = new Date(results.data.date)
+		$scope.monitorIdAval.push(" ");
+		results.data.date = new Date(results.data.date);
 		$scope.newTask = results.data;
 	}).catch((error) => {
 		console.log("getSingleSavingFor error", error);

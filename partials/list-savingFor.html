@@ -9,8 +9,9 @@
     <th>Add Amount</th>
     <th>Date Added</th>
     <th>Monitor id</th>
-    
+    <td></td>
   </tr>
+
   </thead>
   <tbody>
   <tr ng-repeat="item in items">
@@ -22,9 +23,22 @@
     <td>{{item.monitorId}}</td>
     <!-- <td>{{item.date | date : "MM/dd/y"}}</td> -->
     <td>
-    <button class="pull-right"><a ng-href="#!/goal-saving/edit/{{item.id}}">Edit</a><i class="fa fa-pencil" aria-hidden="true"></i></button>
-       <button class="pull-right" ng-click="deleteItem(item.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+       <button class="pull-right btnAn"><a ng-href="#!/goal-saving/edit/{{item.id}}">Edit</a><i class="fa fa-pencil" aria-hidden="true"></i></button>
+       <button class="pull-right btnAn" ng-click="deleteItem(item.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
     </td>
   </tr>
   </tbody>
+
+  <tfoot class="total">
+    <tr>
+      <td>Total</td>
+      <td></td>
+      <td>{{sumSaveAmount}}</td>
+      <td>{{sumAddAmount}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tfoot>
+
 </table>

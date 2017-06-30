@@ -15,10 +15,10 @@
     <td>{{item.title}}</td>
     <td>{{item.amount}}</td>
     <td>{{item.date | date : "MM/dd/y"}}</td>
-    <td class="btnAn">
-       <button class="pull-right"><a ng-href="#!/income/edit/{{item.id}}">Edit</a><i class="fa fa-pencil" aria-hidden="true"></i></button>
+    <td>
+       <button class="pull-right btnAn"><a ng-href="#!/income/edit/{{item.id}}">Edit</a><i class="fa fa-pencil" aria-hidden="true"></i></button>
 
-       <button class="pull-right" ng-click="deleteItem(item.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+       <button class="pull-right btnAn" ng-click="deleteItem(item.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
     </td>
   </tr>
   </tbody>
@@ -29,8 +29,8 @@
       <td>{{sumAmount}}</td>
       <td></td>
       <td></td>
-
     </tr>
   </tfoot>
+
 </table>
 

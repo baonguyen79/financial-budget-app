@@ -172,9 +172,9 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 				jsGauge2Value = caculationFactory.calPercent( allIncomes , allVaryExpenses.setAmount );
 				jsGauge3Value = caculationFactory.calPercent( allSavingFor.goal , allSavingFor.saveAmount );
 				
-				if (isNaN(jsGauge1Value)) {jsGauge1Value = 0};
-				if (isNaN(jsGauge2Value)) {jsGauge2Value = 0};
-				if (isNaN(jsGauge3Value)) {jsGauge3Value = 0};
+				if (isNaN(jsGauge1Value)) {jsGauge1Value = 0;}
+				if (isNaN(jsGauge2Value)) {jsGauge2Value = 0;}
+				if (isNaN(jsGauge3Value)) {jsGauge3Value = 0;}
 
 				$('.js-gauge--1').kumaGauge({
 				value: jsGauge1Value,

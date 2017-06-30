@@ -1,8 +1,8 @@
 @import 'colors';
 body {
   // background: url("/Images/backgroud1.jpg");
-  // background: url("/Images/475229015.jpg");
-  background: url("/Images/ice-background-2577.jpg");
+  background: url("/Images/475229015.jpg");
+  // background: url("/Images/hqdefault.jpg");
   // height: 100%; 
   // width: auto;
 
@@ -16,13 +16,15 @@ body {
 
 .navbar {
   border:2px solid #ccc;
+  // background-color: green;
 }
 
 .panel {
   // border: 1px solid black;
   border:1px solid #ccc;
     border-bottom:2px solid #bbb;
-    border-top:1px solid #ddd;
+    // border-top:1px solid #ddd;
+    border: 1px solid black;
     border-radius:10px;
      box-shadow: 10px 10px 5px grey;
 
@@ -55,6 +57,7 @@ body {
   background: $DimGray;
   color: white;
   text-shadow: 2px 2px 4px #000000;
+  border: 1px solid black; 
 }
 
 #currMonth {
@@ -135,10 +138,20 @@ tr:nth-child(even) {
   // &[data-comparing="active"] tbody th {
   //   border-bottom: none;
   //   font-size: 0.75em;
-  //   color: #767676;
+  //   color: #767676;#fbdb65#fbdb65
   //   padding-bottom: 0;
   // }
 
+}
+
+
+h3, label {
+  color: #fbdb65;
+  text-shadow: 2px 2px 4px black;
+}
+
+h3 {
+  font-family: 'Pacifico', cursive;
 }
 
 .msgFont {

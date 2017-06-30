@@ -1,41 +1,63 @@
 <h3>{{heading}}</h3>
 <div>
-  <div class="form-group">
-    <label>Saving For</label>
-    <input id="title" type="text" class="form-control col-10" placeholder="type of saving" ng-model="newTask.title" ng-required="required" />
-  </div>
-
-
-  <div class="form-group">
-    <label>Goal</label>
-    <input type="text" class="form-control" placeholder="amount need" ng-model="newTask.goal" ng-required="required"/>
-
-    <label>Saved Amount</label>
-    <input type="text" class="form-control" placeholder=" " ng-model="newTask.saveAmount"/>
-
-    <label>Add Amount</label>
-    <input type="text" class="form-control" placeholder=" " ng-model="newTask.addAmount"/>
-
-    <label>Image URL</label>
-    <input type="text" class="form-control" placeholder="image url" ng-model="newTask.imageUrl" />
-    
-    <label>Monitor Id</label>
-    <input type="text" class="form-control"  ng-model="newTask.monitorId" placeholder="optional monitor id" />
-  </div>
-
-   <div class="form-group row">
+  <div class="form-group row">
     <div class="col-xs-6">
-      <p class="input-group">
-      <input type="date" class="form-control" uib-datepicker-popup ng-model="newTask.date" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-
-        <span class="input-group-btn">
-          <button type="button" class="btn btn-default" ng-click="isOpened2 = !isOpened2"><i class="glyphicon glyphicon-calendar"></i></button>
-        </span>
-      </p>
+      <label>Saving For</label>
+      <input id="title" type="text" class="form-control col-10" placeholder="type of saving" ng-model="newTask.title" ng-required="required" />
     </div>
   </div>
 
-  <div ng-show="isShow" class="alert alert-success"><strong>Saving entry Saved</div>
 
-  <button class="btn btn-default" ng-click="addNewSavingFor()">Save</button>
+  <div class="form-group row">
+   <div class="col-xs-6">
+    <label>Goal</label>
+    <input type="text" class="form-control" placeholder="amount need" ng-model="newTask.goal" ng-required="required"/>
+  </div>
+</div>
+
+<div class="form-group row">
+ <div class="col-xs-6">
+  <label>Saved Amount</label>
+  <input type="text" class="form-control" placeholder=" " ng-model="newTask.saveAmount"/>
+</div>
+</div>
+
+<div class="form-group row">
+ <div class="col-xs-6">
+  <label>Add Amount</label>
+  <input type="text" class="form-control" placeholder=" " ng-model="newTask.addAmount"/>
+</div>
+</div>
+
+<div class="form-group row">
+ <div class="col-xs-6">
+  <label>Image URL</label>
+  <input type="text" class="form-control" placeholder="image url" ng-model="newTask.imageUrl" />
+</div>
+</div>
+
+<div class="form-group row">
+ <div class="col-xs-6">
+  <label>Monitor Id</label>
+  <!-- <input type="text" class="form-control"  ng-model="newTask.monitorId" placeholder="optional monitor id" /> -->
+  <select ng-model="newTask.monitorId" ng-options="item for item in monitorIdAval">
+  </select>
+</div>
+</div>
+
+<div class="form-group row">
+  <div class="col-xs-6">
+    <p class="input-group">
+      <input type="date" class="form-control" uib-datepicker-popup ng-model="newTask.date" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="isOpened2 = !isOpened2"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </p>
+  </div>
+</div>
+
+<div ng-show="isShow" class="alert alert-success"><strong>Saving entry Saved</div>
+
+<button class="btn btn-success" ng-click="addNewSavingFor()">Save</button>
 </div>

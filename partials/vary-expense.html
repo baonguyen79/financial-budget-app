@@ -24,8 +24,9 @@
 
 <div class="form-group row">
   <div class="col-xs-6">
-    <label>For month period</label>
-    <input type="text" class="form-control" placeholder="month" ng-model="newTask.month" /><label>Monitor Id</label>
+    <!-- <label>For month period</label>
+    <input type="text" class="form-control" placeholder="month" ng-model="newTask.month" /> -->
+    <label>Monitor Id</label>
     <select ng-model="newTask.monitorId" ng-options="item for item in monitorIdAval">
      </select>
     <!-- <input type="text" class="form-control"  ng-model="newTask.monitorId" placeholder="optional monitor id" /> -->
@@ -47,5 +48,5 @@
  
   <div ng-show="isShow" class="alert alert-success"><strong>Expense Saved</div>
   
-  <button class="btn btn-default" ng-click="addNewVaryExpense()">Save</button>
+  <button class="btn btn-success" ng-click="addNewVaryExpense()">Save</button>
 <!-- </div> -->

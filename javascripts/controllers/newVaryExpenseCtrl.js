@@ -1,5 +1,5 @@
 app.controller("newVaryExpenseCtrl", function($rootScope, $location, $scope, uibDateParser, FirebaseFactory) {
-	$scope.heading = "Add New Vary Expense";
+	$scope.heading = "Add New Variable Expense";
 	$scope.newTask = {date: new Date(),
 					  spendAmount: 0,
 					  month: $rootScope.month,	

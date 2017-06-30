@@ -1,5 +1,5 @@
 body {
-  background: url("/Images/ice-background-2577.jpg");
+  background: url("/Images/475229015.jpg");
   /* Center and scale the image nicely */
   background-repeat: no-repeat;
   background-size: cover; }
@@ -10,7 +10,7 @@ body {
 .panel {
   border: 1px solid #ccc;
   border-bottom: 2px solid #bbb;
-  border-top: 1px solid #ddd;
+  border: 1px solid black;
   border-radius: 10px;
   box-shadow: 10px 10px 5px grey; }
 
@@ -35,7 +35,8 @@ body {
   width: 100px;
   background: DimGray;
   color: white;
-  text-shadow: 2px 2px 4px #000000; }
+  text-shadow: 2px 2px 4px #000000;
+  border: 1px solid black; }
 
 #currMonth {
   position: absolute;
@@ -75,6 +76,13 @@ table {
     transform: translate3d(6px, -6px, 0); }
   table tr:nth-child(even) {
     background-color: lightgray; }
+
+h3, label {
+  color: #fbdb65;
+  text-shadow: 2px 2px 4px black; }
+
+h3 {
+  font-family: 'Pacifico', cursive; }
 
 .msgFont {
   font-family: 'Pacifico', cursive; }

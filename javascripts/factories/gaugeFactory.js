@@ -64,7 +64,7 @@ app.factory("gaugeFactory", function(){
         //barShadow: 0,
         //
         animation: true,
-        animationDuration: 1500,
+        animationDuration: 1800,
         animationRule: "linear",
         animatedValue: true,
         //animateOnInit: true,

@@ -22,7 +22,7 @@ app.controller("updateSurplusCtrl", function($location, $routeParams, $scope, $r
 
 	$scope.addToSaving = (item) => {
 		item.amount += parseFloat($scope.currSurplusAmount);
-		console.log("addToSurplus" , item , " " , $scope.currSurplusAmount)
+		console.log("addToSurplus" , item , " " , $scope.currSurplusAmount);
 		FirebaseFactory.updateSaving(item).then(() => {
 			// $location.url("/start");
 			createIncomeTransaction (item);
@@ -46,9 +46,9 @@ app.controller("updateSurplusCtrl", function($location, $routeParams, $scope, $r
 		else
 		{
 			$location.url("/start");
-		};
+		}
 
-		console.log("subtractSaving" , item , " " , $scope.currSurplusAmount)
+		console.log("subtractSaving" , item , " " , $scope.currSurplusAmount);
 		FirebaseFactory.updateSaving(item).then(() => {
 			// $location.url("/start");
 			createIncomeTransaction (item);

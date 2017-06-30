@@ -1,5 +1,6 @@
 app.controller("newSavingForCtrl", function($rootScope, $location, $scope, uibDateParser, FirebaseFactory) {
 	$scope.heading = "Add New Goal Saving for";
+	$scope.monitorIdAval  = $rootScope.MonitorIdAval;	
 	$scope.newTask = {monitorId: " ",
 					  saveAmount: 0,
 					  addAmount: 0,
