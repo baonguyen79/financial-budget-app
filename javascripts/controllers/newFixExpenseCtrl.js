@@ -1,5 +1,5 @@
 app.controller("newFixExpenseCtrl", function($rootScope, $location, $scope, uibDateParser, FirebaseFactory) {
-	$scope.heading = "Add New Fix Expense";
+	$scope.heading = "Add New Fixed Expense";
 	$scope.newTask = {date: new Date(),
 					  month: $rootScope.month};
 

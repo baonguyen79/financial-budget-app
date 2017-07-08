@@ -303,9 +303,10 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 
 	let editSavingFor = (item) => {
 		item.goal 		= parseFloat(item.goal);
-		item.addAmount = parseFloat(item.addAmount);
-		item.saveAmount = parseFloat(item.saveAmount) + item.addAmount;
-		item.addAmount = 0;
+		item.addAmount  = parseFloat(item.addAmount);
+		item.saveAmount = parseFloat(item.saveAmount);
+		// item.saveAmount = parseFloat(item.saveAmount) + item.addAmount;
+		// item.addAmount = 0;
 		return $q((resolve, reject) => {
 			$http.put(`${FIREBASE_CONFIG.databaseURL}/savingFor/${item.id}.json`, 
 				JSON.stringify({
@@ -331,8 +332,9 @@ app.factory("FirebaseFactory", function($q, $http, FIREBASE_CONFIG){
 	let postNewSavingFor = (item) => {
 		item.goal 		= parseFloat(item.goal);
 		item.addAmount = parseFloat(item.addAmount);
-		item.saveAmount = parseFloat(item.saveAmount) + item.addAmount;
-		item.addAmount = 0;
+		item.saveAmount = parseFloat(item.saveAmount);
+		// item.saveAmount = parseFloat(item.saveAmount) + item.addAmount;
+		// item.addAmount = 0;
 		return $q((resolve, reject) =>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/savingFor.json`, JSON.stringify(item))
 				.then((resultz) => {

@@ -14,8 +14,9 @@ app.controller("NavCtrl", function($scope, $rootScope, $location, $route) {
 	     "November",
 	      "December"];
 
-	$rootScope.month = currDate.getMonth() + 1;
+	$rootScope.month = currDate.getMonth();
 	$scope.selectMonth = $scope.monthName [$rootScope.month];
+	$rootScope.month ++;
     	// console.log ("root before" , $rootScope.month);
 	
     $scope.update = () => {

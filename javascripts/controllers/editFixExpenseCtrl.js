@@ -1,6 +1,6 @@
 app.controller("editFixExpenseCtrl", function($location, $routeParams, $scope, FirebaseFactory) {
 	$scope.newTask = {};
-	$scope.heading = "Edit fix Expense Item";
+	$scope.heading = "Edit fixed Expense Item";
 
 	FirebaseFactory.getSingleFixExpense($routeParams.id).then((results) => {
 		// console.log("getSingleFixExpense results", results);

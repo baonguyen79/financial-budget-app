@@ -113,14 +113,14 @@ table {
 
   // td:last-child:hover {
 
-.btnAn:hover {    
-  background-color: beige;
-  color: #403E10;
-  font-weight: bold;
+// .btnAn:hover {    
+//   background-color: beige;
+//   color: #403E10;
+//   font-weight: bold;
   
-  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
-  transform: translate3d(6px, -6px, 0);
-}
+//   box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+//   transform: translate3d(6px, -6px, 0);
+// }
 
 //   tr:nth-child(odd) {
 //     background-color: #323C50;
@@ -144,9 +144,18 @@ tr:nth-child(even) {
 
 }
 
+.btnAn:hover {    
+  background-color: beige;
+  color: #403E10;
+  font-weight: bold;
+  
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+}
 
 h3, label {
-  color: #fbdb65;
+  // color: #fbdb65;
+  color: white;
   text-shadow: 2px 2px 4px black;
 }
 

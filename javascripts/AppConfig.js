@@ -48,6 +48,13 @@ app.config(function($routeProvider) {
     controller: 'mainAllCtrl',
     resolve : {isAuth}   
   })
+  // show pie chart
+  .when('/start/pie-chart', {
+    templateUrl: 'partials/pieChart.html',
+    controller: 'pieChartCtrl',
+    resolve : {isAuth}   
+  })
+
   //Income//
   .when('/start/list-incomes', {
    templateUrl: 'partials/list-incomes.html',

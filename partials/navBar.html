@@ -9,7 +9,7 @@
       </button>
       <!-- <a class="navbar-brand" href="#">My Monthly Budget for - <strong>{{monthName}} / {{year}}</strong></a> -->
       <strong style="color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;"><big>My Monthly Budget For  </big> </strong>
+    text-shadow: 1px 1px 2px black, 0 0 25px lightgray, 0 0 5px darkgray;"><big>My Monthly Budget For  </big> </strong>
       <select type= class="navbar-brand" ng-model="selectMonth" ng-options="month for month in monthName" ng-change="update()"> </select> 
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,6 +19,9 @@
         <!-- <li><a ng-href="#!/start/new-expense">Add New Expense</a></li> -->
         <!-- <li><a ng-href="#!/start/new-saving-for">Add New Saving</a></li> -->
         <li role="presentation"><a ng-href="#!/start">Home</a></li>
+        
+        <li role="presentation"><a ng-href="#!/start/pie-chart">Pie Chart</a></li>
+
         <li uib-dropdown on-toggle="toggled(open)" >
           <a href id="simple-dropdown" uib-dropdown-toggle>Incomes <span class="caret"></span> </a>
           <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
