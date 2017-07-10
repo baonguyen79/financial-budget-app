@@ -22,8 +22,15 @@ app.controller("ListGoalSavingCtrl", function($rootScope, $scope, $location, Fir
 	getItems();
 
 	$scope.deleteItem = (id) => {
+		
+		// FirebaseFactory.getSingleSavingFor(id).then((results) => {
+		// 	console.log("delete amount" , results);
+		// }).catch((error) => {
+		// 	console.log("getSingleSavingFor error", error);
+		// });
+
 		FirebaseFactory.deleteSavingFor(id).then(() => {
-				getItems();
+			getItems();
 		}).catch((error) => {
 			console.log("delete savingFor error", error);
 		});

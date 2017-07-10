@@ -57,35 +57,40 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 				//* Setup monitor for  Variable Expenses *//
 				results[1].forEach ((item) => {
 					if (item.monitorId === "1") {
-						$rootScope.MonitorIdAval.splice(0, 1);
+						// $rootScope.MonitorIdAval.splice(0, 1);
+						removeMonitor(item.monitorId);
 						$scope.title1 = item.title;
 						$scope.setAmount1 = item.setAmount;
 						$scope.currAmount1 = item.spendAmount;
 						gaugeVal1 = gaugeFactory.drawLinearGauge1(caculationFactory.calPercent(item.setAmount , item.spendAmount));
 					}	
 					if (item.monitorId === "2") {
-						$rootScope.MonitorIdAval.splice(1, 1);
+						// $rootScope.MonitorIdAval.splice(1, 1);
+						removeMonitor(item.monitorId);
 						$scope.title2 = item.title;
 						$scope.setAmount2 = item.setAmount;
 						$scope.currAmount2 = item.spendAmount;
 						gaugeVal2 = gaugeFactory.drawLinearGauge2(caculationFactory.calPercent(item.setAmount , item.spendAmount));
 					}
 					if (item.monitorId === "3") {
-						$rootScope.MonitorIdAval.splice(2, 1);
+						// $rootScope.MonitorIdAval.splice(2, 1);
+						removeMonitor(item.monitorId);
 						$scope.title3 = item.title;
 						$scope.setAmount3 = item.setAmount;
 						$scope.currAmount3 = item.spendAmount;
 						gaugeVal3 = gaugeFactory.drawLinearGauge3(caculationFactory.calPercent(item.setAmount , item.spendAmount));
 					}
 					if (item.monitorId === "4") {
-						$rootScope.MonitorIdAval.splice(3, 1);
+						// $rootScope.MonitorIdAval.splice(3, 1);
+						removeMonitor(item.monitorId);
 						$scope.title4 = item.title;
 						$scope.setAmount4 = item.setAmount;
 						$scope.currAmount4 = item.spendAmount;
 						gaugeVal4 = gaugeFactory.drawLinearGauge4(caculationFactory.calPercent(item.setAmount , item.spendAmount));
 					}
 					if (item.monitorId === "5") {
-						$rootScope.MonitorIdAval.splice(4, 1);
+						// $rootScope.MonitorIdAval.splice(4, 1);
+						removeMonitor(item.monitorId);
 						$scope.title5 = item.title;
 						$scope.setAmount5 = item.setAmount;
 						$scope.currAmount5 = item.spendAmount;
@@ -97,7 +102,8 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 				//* Setup monitor for savingFor  *// 
 				results[2].forEach ((item) => {
 					if (item.monitorId === "1") {
-						$rootScope.MonitorIdAval.splice(0, 1);
+						// $rootScope.MonitorIdAval.splice(0, 1);
+						removeMonitor(item.monitorId);
 						$scope.title1 = item.title;
 						$scope.setAmount1 = item.goal;
 						$scope.currAmount1 = item.saveAmount + item.addAmount;
@@ -105,7 +111,8 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 						gaugeVal1 = gaugeFactory.drawLinearGauge1(caculationFactory.calPercent(item.goal , item.saveAmount));
 					}
 					if (item.monitorId === "2") {
-						$rootScope.MonitorIdAval.splice(1, 1);
+						// $rootScope.MonitorIdAval.splice(1, 1);
+						removeMonitor(item.monitorId);
 						$scope.title2 = item.title;
 						$scope.setAmount2 = item.goal;
 						$scope.currAmount2 = item.saveAmount + item.addAmount;
@@ -113,7 +120,8 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 						gaugeVal2 = gaugeFactory.drawLinearGauge2(caculationFactory.calPercent(item.goal , item.saveAmount));
 					}
 					if (item.monitorId === "3") {
-						$rootScope.MonitorIdAval.splice(2, 1);
+						// $rootScope.MonitorIdAval.splice(2, 1);
+						removeMonitor(item.monitorId);
 						$scope.title3 = item.title;
 						$scope.setAmount3 = item.goal;
 						$scope.currAmount3 = item.saveAmount + item.addAmount;
@@ -121,7 +129,8 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 						gaugeVal3 = gaugeFactory.drawLinearGauge3(caculationFactory.calPercent(item.goal , item.saveAmount));
 					}
 					if (item.monitorId === "4") {
-						$rootScope.MonitorIdAval.splice(3, 1);
+						// $rootScope.MonitorIdAval.splice(3, 1);
+						removeMonitor(item.monitorId);
 						$scope.title4 = item.title;
 						$scope.setAmount4 = item.goal;
 						$scope.currAmount4 = item.saveAmount + item.addAmount;
@@ -129,7 +138,8 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 						gaugeVal4 = gaugeFactory.drawLinearGauge4(caculationFactory.calPercent(item.goal , item.saveAmount));
 					}
 					if (item.monitorId === "5") {
-						$rootScope.MonitorIdAval.splice(4, 1);
+						// $rootScope.MonitorIdAval.splice(4, 1);
+						removeMonitor(item.monitorId);
 						$scope.title5 = item.title;
 						$scope.setAmount5 = item.goal;
 						$scope.currAmount5 = item.saveAmount + item.addAmount;
@@ -149,7 +159,8 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 				$scope.avalFund = allIncomes - (allExpenses + allSavingFor.addAmount);
 
 				$rootScope.currSurplusAmount = $scope.avalFund;
-				$rootScope.allExpenses = allExpenses;
+				$rootScope.allVaryExpenses = allVaryExpenses.setAmount;
+				$rootScope.allFixExpenses = allFixExpenses;
 				$rootScope.allIncomes = allIncomes;
 				$rootScope.allSavingFor = allSavingFor.addAmount;
 
@@ -167,7 +178,7 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 				console.log("allIncomes" , allIncomes , "allExpenses" , allExpenses , " save" , allSavingFor.addAmount);
 
 				//* Fund available gauge  *//
-				gaugeFactory.drawGauge(100 - caculationFactory.calPercent(allIncomes , allExpenses));
+				gaugeFactory.drawGauge(100 - caculationFactory.calPercent(allIncomes , (allExpenses + allSavingFor.addAmount)));
 				//*  Fixed Expenses vs Income  Gauge *//
 
 				
@@ -237,6 +248,15 @@ app.controller("mainAllCtrl", function($rootScope, $scope, $q, FirebaseFactory, 
 	};
 
 	getAll();
+
+	let removeMonitor = (monitorId) => {
+		 var index = $rootScope.MonitorIdAval.indexOf(monitorId);
+ 
+	    if (index > -1) {
+	       $rootScope.MonitorIdAval.splice(index, 1);
+	    }
+	    console.log ("monitor:" , monitorId , " " , $rootScope.MonitorIdAval);
+	}
 	
 
 });	

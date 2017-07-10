@@ -101,6 +101,7 @@ app.factory("gaugeFactory", function(){
             units: "%",
             minValue: 0,
             maxValue: 100,
+            colorBarProgress: "#FF8C00",
             majorTicks: [
             "0",
             "20",
@@ -164,6 +165,7 @@ app.factory("gaugeFactory", function(){
                 "color": "rgba(200, 50, 50, .75)"
             }
             ],
+            colorBarProgress: "#FF8C00",
             colorPlate: "#fff",
             borderShadowWidth: 0,
             borders: false,
@@ -210,6 +212,7 @@ app.factory("gaugeFactory", function(){
                 "color": "rgba(200, 50, 50, .75)"
             }
             ],
+            colorBarProgress: "#FF8C00",
             colorPlate: "#fff",
             borderShadowWidth: 0,
             borders: false,
@@ -241,6 +244,7 @@ app.factory("gaugeFactory", function(){
             units: "%",
             minValue: 0,
             maxValue: 100,
+            colorBarProgress: "#FF8C00",
             majorTicks: [
             "0",
             "20",
@@ -306,6 +310,7 @@ app.factory("gaugeFactory", function(){
                 "color": "rgba(200, 50, 50, .75)"
             }
             ],
+            colorBarProgress: "#FF8C00",
             colorPlate: "#fff",
             borderShadowWidth: 0,
             borders: false,

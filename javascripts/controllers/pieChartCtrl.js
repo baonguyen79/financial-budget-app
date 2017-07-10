@@ -21,11 +21,11 @@ app.controller("pieChartCtrl", function($rootScope, $location, $scope) {
             value: "0"
         },
         {
-            label: "Expenses",
+            label: "Variable Expenses",
             value: "0"
         },
         {
-            label: "Surplus",
+            label: "Fixed Expenses",
             value: "0"
         },
         {
@@ -36,12 +36,21 @@ app.controller("pieChartCtrl", function($rootScope, $location, $scope) {
     ]
 };
 
-console.log("www"  , $rootScope.allSavingFor, " " , $rootScope.allIncomes);
 
-myDataSource.data[0].value	=	$rootScope.allIncomes;
-myDataSource.data[1].value	=	$rootScope.allExpenses; 
-myDataSource.data[2].value	= 	$rootScope.currSurplusAmount; 
-myDataSource.data[3].value	=	$rootScope.allSavingFor;
+let income  =   $rootScope.allIncomes - ($rootScope.allFixExpenses + $rootScope.allVaryExpenses);
+if (income < 0)
+ {
+    myDataSource.data[0].value  =   0;
+}
+else
+{
+    myDataSource.data[0].value = income;
+}
+
+console.log("income" , income  , $rootScope.allSavingFor, " " , $rootScope.allIncomes , " " , $rootScope.allFixExpenses , " " ,  $rootScope.allVaryExpenses);
+myDataSource.data[1].value	=	$rootScope.allVaryExpenses; 
+myDataSource.data[2].value  =   $rootScope.allFixExpenses; 
+myDataSource.data[3].value	=	0;
 
 
 $scope.myDataSource = myDataSource;

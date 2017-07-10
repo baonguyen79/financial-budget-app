@@ -16,13 +16,29 @@
 	  "amount" : 1000,
       "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     
+    },
+    "income3" : {
+	  "month": 6,	
+      "title" : "paycheck",
+	  "date" : "06/01/2017",
+	  "amount" : 2000,
+      "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+    
+    },
+    "income4" : {
+	  "month": 6,	
+      "title" : "paycheck",
+	  "date" : "06/15/2017",
+	  "amount" : 2000,
+      "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+    
     }
   },
   "fixExpenses" : {
       "fixExpense1" : {
 	  "month": 1,	
 	  "title" : "comcast",
-	  "amount" : 20,
+	  "amount" : 200,
 	  "date" : "01/01/2017",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     },
@@ -32,6 +48,20 @@
 	  "amount" : 30,
 	  "date" : "06/01/2017",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+    },
+    "fixExpense3" : {
+	  "month": 6,	
+	  "title" : "car payment",
+	  "amount" : 300,
+	  "date" : "06/01/2017",
+	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+    },
+    "fixExpense4" : {
+	  "month": 6,	
+	  "title" : "cable",
+	  "amount" : 110,
+	  "date" : "06/05/2017",
+	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     }
   },
   "varyExpenses" : {
@@ -39,8 +69,8 @@
 	  "month": 1,	
 	  "title" : "food",
 	  "date" : "01/01/2017",
-	  "setAmount": 200,
-	  "spendAmount" : 100,
+	  "setAmount": 600,
+	  "spendAmount" : 410,
 	  "monitorId": "1",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     },
@@ -50,7 +80,25 @@
 	  "date" : "01/01/2017",
 	  "setAmount" : 100,
 	  "spendAmount" : 50,
+	  "monitorId": " ",
+	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+    },
+    "varyExpense3" : {
+	  "month": 6,	
+	  "title" : "food",
+	  "date" : "06/21/2017",
+	  "setAmount" : 400,
+	  "spendAmount" : 310,
 	  "monitorId": "2",
+	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+    },
+    "varyExpense4" : {
+	  "month": 6,	
+	  "title" : "Dinner with Don",
+	  "date" : "06/21/2017",
+	  "setAmount" : 40,
+	  "spendAmount" : 40,
+	  "monitorId": " ",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
     }
   },
@@ -61,7 +109,7 @@
 	  "saveAmount" : 123,
 	  "addAmount" : 0,  
 	  "date" : "01/01/2017",
-	  "monitorId": "1",
+	  "monitorId": "4",
 	  "imageUrl": "https://s3.amazonaws.com/harmony-live/harmonyoftheseas/wp-content/uploads/2016/08/HM-Aerials-June2016-598.jpg",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
 	},
@@ -71,8 +119,18 @@
 	  "saveAmount" : 123,
 	   "addAmount" : 0,
 	   "date" : "01/01/2017",
-	   "monitorId": "2",
+	   "monitorId": "5",
 	  "imageUrl": "http://i2.cdn.cnn.com/cnnnext/dam/assets/160120103725-toyota-ft-1-concept-exterior-super-169.jpg",
+	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
+	},
+	"savingFor3" : {
+	  "title" : "new car",
+	  "goal" : 1234,
+	  "saveAmount" : 123,
+	   "addAmount" : 200,
+	   "date" : "01/01/2017",
+	   "monitorId": "5",
+	  "imageUrl": "http://car-pictures.cars.com/images/?IMG=USC70HOC022F021001.jpg&HEIGHT=600",
 	  "uid": "pLPQeobtWxV9Y2qiN9T3R6BgsKs1"
 	}
   },
